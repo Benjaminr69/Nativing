@@ -11,6 +11,11 @@
       <%= f.label :Mot_de_passe %>
       <%= f.password_field :password, class: 'form-control' %>
 
+      <%= f.label :Se_rappeler_de_moi, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Se rappeler de moi sur cet ordinateur</span>
+      <% end %>
+
       <%= f.submit "Se connecter", class: "btn btn-primary" %>
     <% end %>
 
