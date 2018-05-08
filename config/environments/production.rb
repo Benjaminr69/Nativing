@@ -92,4 +92,19 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security,
   # and use secure cookies.
   config.force_ssl = true
+
+   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'nativing.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_fname      => ENV['SENDGRID_USERFNAME'],
+    :user_lname      => ENV['SENDGRID_USERLNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+  }
 end

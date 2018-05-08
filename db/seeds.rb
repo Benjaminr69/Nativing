@@ -9,9 +9,12 @@ User.create!(fname:  "Example",
 			 lname: "User",
              email: "example@railstutorial.org",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
 
-99.times do |n|
+1.times do |n|
   fname  = Faker::Name.name
   lname = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
@@ -20,5 +23,7 @@ User.create!(fname:  "Example",
   			   lname: lname,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end

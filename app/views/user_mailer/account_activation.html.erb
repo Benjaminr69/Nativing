@@ -1,0 +1,10 @@
+<h1>Nativing</h1>
+
+<p>Bonjour <%= @user.fname %>,</p>
+
+<p>
+Bienvenue sur Nativing ! Merci de cliquer sur le lien ci-dessous pour valider votre inscription :
+</p>
+
+<%= link_to "Activer", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
