@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+  	@titre = "Inscription"
   	@user = User.new
   end
 
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Bienvenue sur Nativing"
       redirect_to @user
     else
