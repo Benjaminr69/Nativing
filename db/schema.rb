@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180508192945) do
+=======
+ActiveRecord::Schema.define(version: 20180508204828) do
+>>>>>>> password-reset
 
   create_table "users", force: :cascade do |t|
     t.string "fname"
@@ -24,6 +28,11 @@ ActiveRecord::Schema.define(version: 20180508192945) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
+<<<<<<< HEAD
+=======
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
+>>>>>>> password-reset
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
