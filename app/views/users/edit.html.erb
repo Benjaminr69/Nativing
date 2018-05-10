@@ -6,14 +6,17 @@
     <%= form_for (@user), :html => { :multipart => true } do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :photo, "Photo" %>
-      <%= f.file_field :photo %>
+      <%= f.label :photo %>
+      <%= f.file_field :photo, class: 'form-control' %>
 
       <%= f.label :Prénom %>
       <%= f.text_field :fname, class: 'form-control' %>
 
       <%= f.label :Nom %>
       <%= f.text_field :lname, class: 'form-control' %>
+
+      <%= f.label :Date_de_naissance %>
+        <%= f.date_select :birthdate, class: 'form-control' %>
 
       <%= f.label :Email %>
       <%= f.email_field :email, class: 'form-control' %>
