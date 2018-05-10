@@ -12,6 +12,8 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
+  access_key_id: AKIAIYOI7T4JVP7E3PGA
+  secret_access_key: kzk7bA57HcZtwf8CmAbRLrTh16Emdhc4f2kcNgrl
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,7 +21,11 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
+  access_key_id: AKIAIYOI7T4JVP7E3PGA
+  secret_access_key: kzk7bA57HcZtwf8CmAbRLrTh16Emdhc4f2kcNgrl
 
 production:
   <<: *default
   database: db/production.sqlite3
+  access_key_id: AKIAIYOI7T4JVP7E3PGA
+  secret_access_key: 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

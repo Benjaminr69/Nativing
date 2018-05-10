@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180508192945) do
-=======
-ActiveRecord::Schema.define(version: 20180508204828) do
->>>>>>> password-reset
+ActiveRecord::Schema.define(version: 20180510135009) do
 
   create_table "users", force: :cascade do |t|
     t.string "fname"
@@ -28,11 +24,16 @@ ActiveRecord::Schema.define(version: 20180508204828) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
-<<<<<<< HEAD
-=======
     t.string "reset_digest"
     t.datetime "reset_sent_at"
->>>>>>> password-reset
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
