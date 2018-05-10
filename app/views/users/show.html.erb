@@ -2,10 +2,11 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-    <%= link_to image_tag(@user.photo.url(:thumb)), @user.photo.url %><br>
+    <%= link_to image_tag(@user.photo.url(:thumb)), @user.photo.url %><br><br>
     <h1><%= @user.fname %> <%= @user.lname %></h1>
 		<h2><%= @user.email %></h2>
 		<p>Age :  <%= @user.age %> ans</p>
+		<p>Langue maternelle : <%= @user.mother_tongue %></p>
 		
 		<%= link_to "Editer le profil", edit_user_path(current_user) %>
     </section>
