@@ -21,6 +21,13 @@
       <%= f.label :Langue_maternelle %>
       <%= f.text_field :mother_tongue, class: 'form-control' %>
 
+      <%= f.label :Autres_langues_parlées %>
+      <%= f.collection_check_boxes :spoken_language_ids, SpokenLanguage.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+      <% end %>
+
       <%= f.label :Email %>
       <%= f.email_field :email, class: 'form-control' %>
 
