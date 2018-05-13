@@ -46,11 +46,17 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def coach
+    user = User.find(params[:user_id])
+    user.update(coach: params[:coach])
+    redirect_to users_url
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:fname, :lname, :email, :password,
-                                   :password_confirmation, :photo, :birthdate, :mother_tongue, spoken_language_ids:[])
+                                   :password_confirmation, :photo, :birthdate, :mother_tongue, :coach, spoken_language_ids:[])
     end
 
     # Before filters

@@ -1,11 +1,22 @@
 <li>
 	<%= link_to image_tag(user.photo.url(:thumb)), user %>
-    <%= link_to user.fname, user %>
-	<%= link_to user.lname, user %>
-    <%= user.email %>
+    | <%= link_to user.fname + ' ' + user.lname, user %>
+    | <%= user.email %>
+
+    <% if current_user.admin? && !current_user?(user) %>
+    	<% if user.coach %>
+    | <%= link_to "Retirer des coachs", user_coach_path(user, coach: false), method: :post,
+                                  data: { confirm: "Êtes vous sûr ?" } %>
+        <% else %>
+    | <%= link_to "Passer coach", user_coach_path(user, coach: true), method: :post, 
+                                  data: { confirm: "Êtes vous sûr ?" } %>
+        <% end %>
+    <% end %>
+
+   
 
     <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "Supprimer", user, method: :delete,
                                   data: { confirm: "Êtes vous sûr ?" } %>
-  <% end %>
+  	<% end %> 
 </li>

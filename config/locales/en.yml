@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  message_mailer:
+    become_coach:
+      subject: "Demande de formation coach"

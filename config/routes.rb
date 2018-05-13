@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   post '/signup' => 'users#create'
 
+  resources :users do
+    post :coach
+  end
+  #=> output: user_coach POST /users/:user_id/coach(.:format)  users#coac
+
   root 'static_pages#home'
   get 'static_pages/home' 
   get 'help' => 'static_pages#help'
@@ -20,6 +25,8 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
 
+  get 'become_coach', to: 'messages#new'
+  post 'become_coach', to: 'messages#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
