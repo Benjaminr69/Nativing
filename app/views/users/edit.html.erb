@@ -1,43 +1,74 @@
 <% provide(:title, "Paramètres") %>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#tabs").tabs();
+});
+</script>
+
 <h1>Mettre à jour votre profil</h1>
 
-<div class="row">
+<div id="content">
+  <div id="tabs">
+    <ul> 
+      <li><a href="#tabs-1">Profil voyageur</a></li>
+      <li><a href="#tabs-2">Profil coach</a></li>
+    </ul>
+    <div id="tabs-1">
+      <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for (@user), :html => { :multipart => true } do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :photo %>
+      <%= f.label :photo, "Photo :" %>
       <%= f.file_field :photo, class: 'form-control' %>
 
-      <%= f.label :Prénom %>
+      <%= f.label :fname , "Prénom :" %>
       <%= f.text_field :fname, class: 'form-control' %>
 
-      <%= f.label :Nom %>
+      <%= f.label :lname, "Nom :" %>
       <%= f.text_field :lname, class: 'form-control' %>
 
-      <%= f.label :Date_de_naissance %>
+      <%= f.label :birthdate, "Date de naissance :" %>
         <%= f.date_select :birthdate, class: 'form-control' %>
 
-      <%= f.label :Langue_maternelle %>
+      <%= f.label :mother_tongue, "Langue maternelle :" %>
       <%= f.text_field :mother_tongue, class: 'form-control' %>
 
-      <%= f.label :Autres_langues_parlées %>
+      <%= f.label :spoken_language_ids, "Autres langues parlées :" %>
       <%= f.collection_check_boxes :spoken_language_ids, SpokenLanguage.all, :id, :name do |b| %>
-      <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
       <% end %>
 
-      <%= f.label :Email %>
+      <%= f.label :email, "Email :" %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :Mot_de_passe %>
+      <%= f.label :password, "Mot de passe :" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :Confirmation_mot_de_passe, "Confirmation" %>
+      <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Enregistrer les changements", class: "btn btn-primary" %>
     <% end %>
+  </div>
+</div>
+    </div>
+    <div id="tabs-2">
+      <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for (@user), :html => { :multipart => true } do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :phone, "Téléphone :" %>
+      <%= f.phone_field :phone, class: 'form-control' %>
+
+      <%= f.submit "Enregistrer les changements", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+    </div>
   </div>
 </div>

@@ -1,15 +1,42 @@
 <% provide(:title, 'Profil') %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-    <%= link_to image_tag(@user.photo.url(:thumb)), @user.photo.url %><br><br>
-    <h1><%= @user.fname %> <%= @user.lname %><% if @user.coach %> (Coach) <% end %></h1>
-		<h2><%= @user.email %></h2><br>
-		<p>Age :  <%= @user.age %> ans</p>
-		<p>Langue maternelle : <%= @user.mother_tongue %></p>
-		<p>Autres langues parlées : <%= @user.spoken_languages.map(&:name).sort.join(", ") %></p>
-		
-		<%= link_to "Editer le profil", edit_user_path(current_user) %>
-    </section>
-  </aside>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#tabs").tabs();
+});
+</script>
+
+<h1>Profil</h1>
+<div id="content">
+    <div id="tabs">
+        <ul> 
+           <li><a href="#tabs-1">Profil voyageur</a></li>
+           <li><a href="#tabs-2">Profil coach</a></li>
+        </ul>
+        <div id="tabs-1">
+        	<div class="row">
+			  <aside class="col-md-4">
+			    <section class="user_info">
+			    <%= link_to image_tag(@user.photo.url(:thumb)), @user.photo.url %><br><br>
+			    <h3><%= @user.fname %> <%= @user.lname %><% if @user.coach %> (Coach) <% end %></h3>
+					<h2><%= @user.email %></h2><br>
+					<p>Age :  <%= @user.age %> ans</p>
+					<p>Langue maternelle : <%= @user.mother_tongue %></p>
+					<p>Autres langues parlées : <%= @user.spoken_languages.map(&:name).sort.join(", ") %></p>
+					
+					<%= link_to "Editer le profil", edit_user_path(current_user) %>
+			    </section>
+			  </aside>
+			</div>
+        </div>
+        <div id="tabs-2">
+        	<div class="row">
+			  <aside class="col-md-4">
+			    <section class="user_info">
+			    <p>Numéro de téléphone :</p>
+			   	<p><%= @user.phone %></p>
+			    </section>
+			  </aside>
+			</div>
+        </div>
+    </div>
 </div>

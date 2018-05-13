@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: [:index, :destroy]
 
+  def first; end
+  def second; end
+  def third; end
+
   def new
   	@user = User.new
   end
@@ -56,7 +60,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:fname, :lname, :email, :password,
-                                   :password_confirmation, :photo, :birthdate, :mother_tongue, :coach, spoken_language_ids:[])
+                                   :password_confirmation, :photo, :birthdate, :mother_tongue, :coach, :phone, spoken_language_ids:[])
     end
 
     # Before filters

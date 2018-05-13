@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511145542) do
+ActiveRecord::Schema.define(version: 20180513192700) do
 
   create_table "coaches", force: :cascade do |t|
     t.float "phone"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20180511145542) do
     t.datetime "birthdate"
     t.string "mother_tongue"
     t.boolean "coach", default: false
-    t.float "phone"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
