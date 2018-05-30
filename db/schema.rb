@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513192700) do
+ActiveRecord::Schema.define(version: 20180529200647) do
 
   create_table "coaches", force: :cascade do |t|
     t.float "phone"
@@ -51,6 +51,27 @@ ActiveRecord::Schema.define(version: 20180513192700) do
     t.string "mother_tongue"
     t.boolean "coach", default: false
     t.string "phone"
+    t.string "address_formatted_address"
+    t.string "address_street_number"
+    t.string "address_street_name"
+    t.string "address_street"
+    t.string "address_city"
+    t.string "address_zip_code"
+    t.string "address_department"
+    t.string "address_department_code"
+    t.string "address_state"
+    t.string "address_state_code"
+    t.string "address_country"
+    t.string "address_country_code"
+    t.float "address_lat"
+    t.float "address_lng"
+    t.string "address"
+    t.integer "street_number"
+    t.string "locality"
+    t.string "route"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.integer "postal_code"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

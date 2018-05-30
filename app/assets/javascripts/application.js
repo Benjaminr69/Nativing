@@ -17,3 +17,12 @@
 //= require jquery-ui
 //= require turbolinks
 //= require_tree .
+//= require jt_address
+
+// This function is call when Google Maps is loaded
+window.googleMapInitialize = function(){
+
+    // Simple usage
+    $('.jt-address-autocomplete').jt_address();
+
+};

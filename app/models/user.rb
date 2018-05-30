@@ -4,6 +4,8 @@ class User < ApplicationRecord
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_and_belongs_to_many :spoken_languages
+  # Add a virtual field named `address` and a class method `address_fields` returning `JT::Rails::Address.fields` prefixed by `address_` in this case
+  has_address :address
 
 
   before_save   :downcase_email

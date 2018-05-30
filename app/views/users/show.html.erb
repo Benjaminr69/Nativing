@@ -34,6 +34,11 @@ $(document).ready(function() {
 			    <section class="user_info">
 			    <p>Numéro de téléphone :</p>
 			   	<p><%= @user.phone %></p>
+
+			   	<p>Adresse :</p>
+			   	<p><%= @user.street_number %> <%= @user.route %></p>
+			   	<p><%= @user.postal_code %> <%= @user.locality %></p>
+			   	<p><%= @user.country %></p>
 			    </section>
 			  </aside>
 			</div>

@@ -65,6 +65,41 @@ $(document).ready(function() {
       <%= f.label :phone, "Téléphone :" %>
       <%= f.phone_field :phone, class: 'form-control' %>
 
+  <div class="field">
+    <%= f.label 'Adresse' %>
+    <%= f.text_field :address, placeholder: "Entrez votre adresse", id: :autocomplete_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'N° de voie' %>
+    <%= f.number_field :street_number, id: :street_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Nom de la voie' %>
+    <%= f.text_field :route, id: :route %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Ville' %>
+    <%= f.text_field :locality, id: :locality %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Région' %>
+    <%= f.text_field :administrative_area_level_1, id: :administrative_area_level_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Pays' %>
+    <%= f.text_field :country, id: :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Code postal' %>
+    <%= f.number_field :postal_code, id: :postal_code %>
+  </div>
+
       <%= f.submit "Enregistrer les changements", class: "btn btn-primary" %>
     <% end %>
   </div>

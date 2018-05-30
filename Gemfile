@@ -37,7 +37,12 @@ gem 'paperclip',  '6.0.0'
 gem 'aws-sdk-s3'
 gem 'language-select'
 gem "tabs_on_rails"
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'jt-rails-address', '~> 1.0'
+gem 'graticule', '>2.0'
+gem 'geocoder'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
