@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :spoken_languages
   # Add a virtual field named `address` and a class method `address_fields` returning `JT::Rails::Address.fields` prefixed by `address_` in this case
   has_address :address
+  has_many :advertisements
 
 
   before_save   :downcase_email

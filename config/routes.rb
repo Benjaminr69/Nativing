@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
 	resources :password_resets,     only: [:new, :create, :edit, :update]
   
   get 'password_resets/new'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
 
   get 'become_coach', to: 'messages#new'
   post 'become_coach', to: 'messages#create'
+
+  resources :posts
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

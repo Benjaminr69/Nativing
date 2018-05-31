@@ -32,13 +32,14 @@ $(document).ready(function() {
         	<div class="row">
 			  <aside class="col-md-4">
 			    <section class="user_info">
-			    <p>Numéro de téléphone :</p>
-			   	<p><%= @user.phone %></p>
+				    <p>Numéro de téléphone :</p>
+				   	<p><%= @user.phone %></p>
 
-			   	<p>Adresse :</p>
-			   	<p><%= @user.street_number %> <%= @user.route %></p>
-			   	<p><%= @user.postal_code %> <%= @user.locality %></p>
-			   	<p><%= @user.country %></p>
+				   	<p>Adresse :</p>
+				   	<p><%= @user.street_number %> <%= @user.route %></p>
+				   	<p><%= @user.postal_code %> <%= @user.locality %></p>
+				   	<p><%= @user.country %></p>
+			   	<%= link_to "Editer le profil", edit_user_path(current_user) %>
 			    </section>
 			  </aside>
 			</div>

@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+
+	<%= render 'shared/post_error' %>
+
+	<%= f.hidden_field :user_id, :value =>current_user.id %>
+
+    <%= f.label :content, "Description :" %><br>
+    <%= f.text_area :content, size: "60x12", placeholder: "Parlez un peu de vous" %><br>
+ 
+    <%= f.submit "Publiez l'annonce" %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= will_paginate %>
+<% @posts.each do |post| %>
+     <h1></h1>
+     <p><%= post.content %></p><br>
+
+     <p><%= link_to "Voir plus", post %></p>
+<% end %>
+<%= will_paginate %>

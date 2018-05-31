@@ -4,6 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Accueil", root_path %></li>
+        <li><%= link_to "Annonces", posts_path%></li>
         <li><%= link_to "Aide", help_path %></li>
         <% if logged_in? %>
           <% if current_user.admin? %>
@@ -17,7 +18,7 @@
               <li><%= link_to "Profil", current_user %></li>
               <li><%= link_to "Paramètres", edit_user_path(current_user) %></li>
               <% if current_user.coach? %>
-                <li><%= link_to "Créer une annonce"  '#' %></li>
+                <li><%= link_to "Créer une annonce", new_post_path %></li>
               <% else %>
                 <li><%= link_to "Devenir coach", become_coach_url(fname: "#{@current_user.fname}") %></li>
               <% end %>
