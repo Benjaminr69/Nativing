@@ -1,8 +1,11 @@
 <%= will_paginate %>
 <% @posts.each do |post| %>
-     <h1></h1>
-     <p><%= post.content %></p><br>
+    <h1><%= post.user.fname %> <%= post.user.lname %></h1>
+    	<h2><%= post.user.mother_tongue %></h2>
+    <center>
+    	<p><%= post.user.postal_code %> <%= post.user.locality %></p>
 
-     <p><%= link_to "Voir plus", post %></p>
+     	<p><%= link_to "En savoir plus", post %></p>
+    </center>
 <% end %>
 <%= will_paginate %>

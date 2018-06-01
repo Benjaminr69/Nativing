@@ -1,4 +1,17 @@
-<h1><%= @post.user.fname %></h1>
-<p><%= @post.content %></p>
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", @post, method: :delete, data: { confirm: "Êtes-vous sûr?" }%>
+<h1><%= @post.user.fname %> <%= @post.user.lname %>, <%= @post.user.age %> ans</h1>
+<h2>Coach d'<%= @post.user.mother_tongue %></h2>
+<p><%= @post.user.spoken_languages.map(&:name).sort.join(", ") %></p>
+<p><%= @post.price %>€ / jour</p><br>
+
+<p> <%= @post.user.fname %> en quelques mots :<br>
+	<%= @post.content %></p>
+
+<p>HEBERGEMENT :<br>
+	<%= @post_attachments.build %></p>
+
+<%= link_to "Contacter #{@post.user.fname}", '#' %><br><br>
+
+<% if @current_user == @post.user %>
+	<%= link_to "Editer", edit_post_path(@post) %>
+	<%= link_to "Supprimer", @post, method: :delete, data: { confirm: "Êtes-vous sûr?" }%>
+<% end %>

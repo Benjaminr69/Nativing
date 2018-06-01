@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :post_attachments
 	resources :password_resets,     only: [:new, :create, :edit, :update]
   
   get 'password_resets/new'

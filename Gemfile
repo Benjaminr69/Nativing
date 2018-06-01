@@ -43,6 +43,7 @@ gem 'jt-rails-address', '~> 1.0'
 gem 'graticule', '>2.0'
 gem 'geocoder'
 gem 'figaro'
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
