@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @availabilities = Availability.all
   end
 
   def update
@@ -54,6 +55,10 @@ class UsersController < ApplicationController
     user = User.find(params[:user_id])
     user.update(coach: params[:coach])
     redirect_to users_url
+  end
+
+  def start_time
+    self.my_related_model.start ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
   end
 
   private
@@ -83,4 +88,5 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+
 end

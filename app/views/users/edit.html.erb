@@ -12,6 +12,7 @@ $(document).ready(function() {
     <ul> 
       <li><a href="#tabs-1">Profil voyageur</a></li>
       <li><a href="#tabs-2">Profil coach</a></li>
+      <li><a href="#tabs-3">Disponibilités</a></li>
     </ul>
     <div id="tabs-1">
       <div class="row">
@@ -104,6 +105,24 @@ $(document).ready(function() {
     <% end %>
   </div>
 </div>
+</div>
+  <div id="tabs-3">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= month_calendar events: @availabilities do |date, availabilities| %>
+        <%= date.day %>
+
+        <% availabilities.each do |availability| %>
+      <div>
+        <%= availability.name %>
+        <%= link_to "Editer", edit_availability_path(availability)  %>
+      </div>
+        <% end %>
+        <% end %>
+        <%= link_to "Voir toutes les disponibilités", availabilities_path  %><br>
+        <%= link_to "Ajouter une disponibilité", new_availability_path  %>
+      </div>
     </div>
+  </div>
   </div>
 </div>

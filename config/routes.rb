@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :availabilities
   resources :post_attachments
 	resources :password_resets,     only: [:new, :create, :edit, :update]
   
