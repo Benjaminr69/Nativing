@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180603142359) do
+ActiveRecord::Schema.define(version: 20180614095419) do
 
   create_table "ads", force: :cascade do |t|
     t.text "content"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20180603142359) do
     t.index ["user_id"], name: "index_availabilities_on_user_id"
   end
 
+  create_table "availabilities_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "availability_id", null: false
+  end
+
   create_table "coaches", force: :cascade do |t|
     t.float "phone"
     t.datetime "created_at", null: false
@@ -37,6 +42,15 @@ ActiveRecord::Schema.define(version: 20180603142359) do
     t.integer "user_id", null: false
     t.index ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id"
     t.index ["user_id", "event_id"], name: "index_events_users_on_user_id_and_event_id"
+  end
+
+  create_table "hearts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_hearts_on_post_id"
+    t.index ["user_id"], name: "index_hearts_on_user_id"
   end
 
   create_table "post_attachments", force: :cascade do |t|
@@ -52,6 +66,8 @@ ActiveRecord::Schema.define(version: 20180603142359) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
+    t.integer "availability_id"
+    t.index ["availability_id"], name: "index_posts_on_availability_id"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -110,6 +126,8 @@ ActiveRecord::Schema.define(version: 20180603142359) do
     t.string "administrative_area_level_1"
     t.string "country"
     t.integer "postal_code"
+    t.integer "availability_id"
+    t.index ["availability_id"], name: "index_users_on_availability_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

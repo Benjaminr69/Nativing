@@ -46,6 +46,7 @@ gem 'geocoder'
 gem 'figaro'
 gem 'carrierwave'
 gem "simple_calendar", "~> 2.0"
+gem 'record_tag_helper', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  resources :hearts
+  match 'heart', to: 'hearts#heart', via: :post
+  match 'unheart', to: 'hearts#unheart', via: :delete
+  
+  resources :favorite_users, only: [:create, :destroy]
   resources :availabilities
   resources :post_attachments
 	resources :password_resets,     only: [:new, :create, :edit, :update]

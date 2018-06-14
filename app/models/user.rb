@@ -6,8 +6,11 @@ class User < ApplicationRecord
   has_and_belongs_to_many :spoken_languages
   # Add a virtual field named `address` and a class method `address_fields` returning `JT::Rails::Address.fields` prefixed by `address_` in this case
   has_address :address
-  has_many :advertisements
-
+  has_many :hearts, dependent: :destroy
+  has_many :posts, through: :hearts
+  
+  has_many :favorites
+  has_many :favorite_users, through: :favorites, source: :favorited, source_type: 'User'
 
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -81,6 +84,22 @@ class User < ApplicationRecord
 
   def age
     ((Time.zone.now - birthdate.to_time) / 1.year.seconds).floor
+  end
+
+  # creates a new heart row with post_id and user_id
+  def heart!(post)
+    self.hearts.create!(post_id: @post.id)
+  end
+
+  # destroys a heart with matching post_id and user_id
+  def unheart!(post)
+    heart = self.hearts.find_by_post_id(post.id)
+    heart.destroy!
+  end
+
+  # returns true of false if a post is hearted by user
+  def heart?(post)
+    self.hearts.find_by_post_id(post.id)
   end
 
   private
