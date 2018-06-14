@@ -96,6 +96,7 @@ GEM
     ffi (1.9.23)
     figaro (1.1.1)
       thor (~> 0.14)
+    filterrific (5.0.1)
     geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -252,6 +253,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   faker (= 1.7.3)
   figaro
+  filterrific
   geocoder
   graticule (> 2.0)
   jbuilder (~> 2.5)

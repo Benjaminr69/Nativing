@@ -1,0 +1,18 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info users %>
+  </div>
+
+<% @users.each do |user| %>
+    <h1><%= user.fname %> <%= user.lname %></h1>
+      <h2><%= user.mother_tongue %></h2>
+    <center>
+      <p><%= user.postal_code %> <%= user.locality %></p>
+
+      <p><%= link_to "En savoir plus", user_path(user) %></p>
+    </center>
+<% end %>
+</div>
+
+<%= will_paginate users %>

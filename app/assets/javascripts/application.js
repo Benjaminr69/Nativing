@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require_tree .
 //= require jt_address
+//= require filterrific/filterrific-jquery
+//= require jquery-ui/widgets/datepicker
 
 // This function is call when Google Maps is loaded
 window.googleMapInitialize = function(){

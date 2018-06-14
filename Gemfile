@@ -45,6 +45,7 @@ gem 'geocoder'
 gem 'figaro'
 gem 'carrierwave'
 gem "simple_calendar", "~> 2.0"
+gem 'filterrific'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

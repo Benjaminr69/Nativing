@@ -1,4 +1,7 @@
+<h1>Annonces</h1>
+
 <%= will_paginate %>
+
 <% @posts.each do |post| %>
     <h1><%= post.user.fname %> <%= post.user.lname %></h1>
     	<h2><%= post.user.mother_tongue %></h2>
