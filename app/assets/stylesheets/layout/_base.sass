@@ -1,0 +1,59 @@
+// NATIVING - Layout base.sass - Digital Campus 2018
+
+////////////////////
+// LAYOUT
+////////////////////////////////////////////////////////////////////////////////
+
+// LAYOUT BASE
+// ---------------------------------------------------------
+body, html
+  width: 100%
+
+
+html
+  font-size: 62.5% // on passe la taille de base à 10px pour les unités en rem : 10px = 1rem (1,4rem = 14px etc)
+
+
+body
+  background-color: $gray-light
+  color: $gray-text
+  font-size: $text-font-size
+  font-family: $font-family-sans-serif
+  line-height: 1.7
+
+  //// pb scintillement font-weight
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+input
+  font-size: $text-font-size
+  font-family: $font-family-sans-serif
+
+
+
+// LAYOUT WRAPPER
+// ---------------------------------------------------------
+.main-wrapper
+  min-height: 100vh
+
+
+.container
+  padding-left: $container-padding-x
+  padding-right: $container-padding-x
+
+
+// SPECIAL CLASSES FOR SPECIAL STATES
+// ---------------------------------------------------------
+.header-open
+  overflow: hidden
+  max-height: 100vh
+
+
+
+////////////////////
+// LINKS
+////////////////////////////////////////////////////////////////////////////////
+a:hover, a:focus
+  text-decoration: none
+  outline: none
