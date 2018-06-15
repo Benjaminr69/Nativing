@@ -17,3 +17,88 @@
   height: 100vh
   overflow: hidden
   width: 100%
+
+
+  ///// HERO CONTENT
+  .hero__content
+    background-color: $white
+    height: 100%
+    position: relative
+    width: 55%
+    z-index: 10
+
+
+  ///// HERO IMAGE
+  .hero__image
+    height: 100%
+    position: absolute
+    right: 0
+    top: 0
+    width: 70%
+    &::after
+      background-color: rgba($secondary, .3)
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 5
+
+
+  ///// HERO ACTION
+  .hero__action-wrapper
+    bottom: 2rem
+    left: 0
+    position: absolute
+    width: 100%
+    z-index: 10
+    &.hero__action--social
+      left: auto
+      right: 0
+      .hero__action
+        align-items: center
+        display: flex
+        justify-content: flex-end
+
+
+  .hero__action
+    color: $gray-dark
+    height: 3.4rem
+
+    .action-icon
+      line-height: 1
+      img
+        width: 1.4rem
+      + .action-icon
+        margin-left: 2rem
+
+    .link-scroll
+      align-items: center
+      display: flex
+      span
+        color: $gray-dark
+        font-size: 1rem
+        font-weight: 900
+        text-transform: uppercase
+        + span
+          margin-left: 1rem
+
+    .scroll-indicator
+      display: inline-block
+      position: relative
+      .scroll__border
+        background-color: transparent
+        border: 0.2rem solid $gray-dark
+        border-radius: 1rem
+        height: 3.4rem
+        width: 2rem
+      .scroll__dot
+        border-radius: 50%
+        background-color: $gray-dark
+        height: 0.5rem
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+        top: 0.7rem
+        width: 0.5rem

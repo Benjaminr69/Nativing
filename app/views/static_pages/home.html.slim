@@ -2,4 +2,48 @@
 // HERO FULL HEIGHT
 ////////////////////////////////////////////////////////////////////////////////
 .hero.hero--fh
-  = image_tag "home/home_background.jpg", class: 'img-cover'
+
+
+
+  // HERO CONTENT
+  // ---------------------------------------------------------
+  .hero__content
+
+
+
+
+  // HERO IMAGE
+  // ---------------------------------------------------------
+  .hero__image
+    = image_tag "home/home_background.jpg", class: 'img-cover'
+
+
+
+  // HERO ACTION
+  // ---------------------------------------------------------
+
+  ///// HERO ACTION (scroll)
+  .hero__action-wrapper
+    .container
+      .hero__action
+        = link_to "#", class: 'link-scroll' do
+          span.scroll-indicator
+            .scroll__border
+            .scroll__dot
+          span scroll
+
+
+  ////// HERO ACTION SOCIAL
+  .hero__action-wrapper.hero__action--social
+    .container
+      .hero__action
+        = link_to "#", class: 'action-icon', target: '_blank' do
+          = image_tag "icons/facebook-logo.svg"
+        = link_to "#", class: 'action-icon', target: '_blank' do
+          = image_tag "icons/twitter-logo.svg"
+        = link_to "#", class: 'action-icon', target: '_blank' do
+          = image_tag "icons/linkedin-logo.svg"
+        = link_to "#", class: 'action-icon', target: '_blank' do
+          = image_tag "icons/instagram-logo.svg"
+        = link_to "#", class: 'action-icon', target: '_blank' do
+          = image_tag "icons/youtube-logo.svg"
