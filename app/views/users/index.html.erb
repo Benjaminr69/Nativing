@@ -2,25 +2,24 @@
 <h1>Liste des utilisateurs :</h1>
 
 <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
-  <div>
-    Langue :
+<div>
+  Langue :
+  <%= f.text_field(
+  :with_mother_tongue,
+  class: 'mother_tongue filterrific-periodically-observed'
+) %>
+</div>
+<div>
+  Ville :
     <%= f.text_field(
-      :search_query,
-      class: 'mother_tongue filterrific-periodically-observed'
-    ) %>
-  </div>
-  <div>
-    Ville :
-    <%= f.text_field(
-      :search_query,
-      class: 'locality filterrific-periodically-observed'
-    ) %>
-  </div>
-  <div>
-    Date de départ :
+  :with_locality,
+  class: 'locality filterrific-periodically-observed'
+) %>
+</div>
+<div>
+  Date de départ :
     <%= f.text_field(:with_start_time_gte, class: 'js-datepicker') %>
-  </div>
-
+</div>
   <%= f.submit 'Rechercher' %>
 
   <div>

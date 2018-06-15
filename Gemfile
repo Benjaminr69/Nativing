@@ -36,6 +36,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'paperclip',  '6.0.0'
 gem 'aws-sdk-s3'
 gem 'language-select'
+gem 'slim', '~> 3.0.8'
 gem "tabs_on_rails"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

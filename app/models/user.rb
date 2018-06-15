@@ -27,32 +27,20 @@ class User < ApplicationRecord
   filterrific(
     default_filter_params: {},
     available_filters: [
-      :search_query,
-      :search_query,
+      :with_mother_tongue,
+      :with_locality,
       :with_start_time_gte
     ]
   )
 
-  scope :search_query, lambda { |query|
-    return nil  if query.blank?
-
-    terms = query.downcase.split(/\s+/)
-
-    terms = terms.map { |e|
-      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
-    }
-    num_or_conditions = 2
-    where(
-        terms.map {
-          or_clauses = [
-              "LOWER(users.mother_tongue) LIKE ?",
-              "LOWER(users.locality) LIKE ?"
-          ].join(' OR ')
-          "(#{ or_clauses })"
-        }.join(' AND '),
-        *terms.map { |e| [e] * num_or_conditions }.flatten
-    )
+  scope :with_mother_tongue, -> (search_string) {
+  where("users.mother_tongue ILIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
   }
+
+  scope :with_locality, -> (search_string) {
+    where("users.locality ILIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
+  }
+
   scope :with_start_time_gte, lambda { |ref_date|
     where('availability.start_time >= ?', ref_date)
   }
