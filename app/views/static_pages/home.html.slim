@@ -8,6 +8,15 @@
   // HERO CONTENT
   // ---------------------------------------------------------
   .hero__content
+    .container
+      .hero__title
+        h1
+          div Vivre une exprérience unique
+          div chez un coach natif
+          .title--bold experimentez l'immersion.
+
+        p Nativing vous fait voyager à travers le monde en immersion totale chez
+        p l'habitant, pour booster vos capacités linguistiques.
 
 
 
@@ -19,6 +28,14 @@
 
 
 
+  // HERO IMAGE
+  // ---------------------------------------------------------
+  .hero__btn
+    = image_tag 'icons/play-button.svg'
+
+
+
+
   // HERO ACTION
   // ---------------------------------------------------------
 
@@ -26,24 +43,22 @@
   .hero__action-wrapper
     .container
       .hero__action
-        = link_to "#", class: 'link-scroll' do
-          span.scroll-indicator
-            .scroll__border
-            .scroll__dot
-          span scroll
 
+        .hero__action--scroll
+          = link_to "#", class: 'link-scroll' do
+            span.scroll-indicator
+              .scroll__border
+              .scroll__dot
+            span scroll
 
-  ////// HERO ACTION SOCIAL
-  .hero__action-wrapper.hero__action--social
-    .container
-      .hero__action
-        = link_to "#", class: 'action-icon', target: '_blank' do
-          = image_tag "icons/facebook-logo.svg"
-        = link_to "#", class: 'action-icon', target: '_blank' do
-          = image_tag "icons/twitter-logo.svg"
-        = link_to "#", class: 'action-icon', target: '_blank' do
-          = image_tag "icons/linkedin-logo.svg"
-        = link_to "#", class: 'action-icon', target: '_blank' do
-          = image_tag "icons/instagram-logo.svg"
-        = link_to "#", class: 'action-icon', target: '_blank' do
-          = image_tag "icons/youtube-logo.svg"
+        .hero__action--social
+          = link_to "#", class: 'action-icon', target: '_blank' do
+            = image_tag "icons/facebook-logo.svg"
+          = link_to "#", class: 'action-icon', target: '_blank' do
+            = image_tag "icons/twitter-logo.svg"
+          = link_to "#", class: 'action-icon', target: '_blank' do
+            = image_tag "icons/linkedin-logo.svg"
+          = link_to "#", class: 'action-icon', target: '_blank' do
+            = image_tag "icons/instagram-logo.svg"
+          = link_to "#", class: 'action-icon', target: '_blank' do
+            = image_tag "icons/youtube-logo.svg"
