@@ -1,0 +1,99 @@
+// NATIVING - Component Atoms BUTTONS - Digital Campus 2018
+
+////////////////////
+// BUTTONS
+////////////////////////////////////////////////////////////////////////////////
+
+// BUTTONS DEFAULT
+// ---------------------------------------------------------
+.btn
+  border: 0.1rem solid transparent
+  border-radius: 3rem
+  cursor: pointer
+  font-size: $text-font-size
+  font-weight: 600
+  overflow: hidden
+  position: relative
+  padding: 0.8rem 2.5rem 0.9rem !important
+  text-decoration: none
+  -webkit-mask-image: -webkit-radial-gradient(white, black) // fix overflow Safari issue
+
+.btn:focus,
+.btn.focus,
+button:focus
+  box-shadow: none
+  outline: 0
+
+.btn:hover,
+.btn.hover,
+button:hover
+  cursor: pointer
+
+
+
+
+// BUTTON COLOR
+// ---------------------------------------------------------
+
+///// BUTTON ANIMATION
+.btn-primary,
+.btn-primarysmooth,
+.btn-primarydark,
+.btn-secondary,
+.btn-default,
+.btn-dark,
+.btn-danger,
+.btn-warning
+  border: none
+  &::before
+    border-radius: 50%
+    content: ''
+    color: $white
+    height: 100%
+    left: 100%
+    margin: 0
+    position: absolute
+    top: 0
+    transform-origin: 100% 50%
+    transform: scale3d(1, 1.4, 1)
+    transition: all 300ms cubic-bezier(0.7,0,0.9,1)
+    width: 20%
+  &:hover,
+  &:focus,
+  &:active,
+  &:not(:disabled):not(.disabled):active
+    &::before
+      transform: scale3d(1, 5, 1)
+      width: 110%
+      left: -2%
+      z-index: 0
+  span,
+  div,
+  i
+    position: relative
+    z-index: 1
+  div:first-child
+    font-weight: 700
+
+  span
+    white-space: normal
+    display: inline-block
+    line-height: 1
+
+
+///// BUTTON PRIMARY
+.btn-primary
+  background-color: $primary
+  color: $white
+  &:hover,
+  &:focus,
+  &:active,
+  &:not(:disabled):not(.disabled):active
+    background-color: $primary !important
+    color: $white
+  &::before
+    background-color: $primary-smooth
+
+a.btn-primary:hover,
+a.btn-primary:focus
+  color: $white

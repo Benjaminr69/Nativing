@@ -1,67 +1,75 @@
 ////////////////////
 /! HEADER
 ////////////////////////////////////////////////////////////////////////////////
-/ header.main-header
-/   nav.navbar.navbar-expand-lg
+header.main-header
+  .container
+    nav.navbar.navbar-expand-md
 
-/     = link_to root_path, class: "navbar-brand", data: {trigger_transition_page: ""} do
-/       = image_tag "logo.png", class: 'img-fluid'
+      = link_to root_path, class: "navbar-brand", data: {trigger_transition_page: ""} do
+        = image_tag "logo.png", class: 'img-fluid'
 
-/     button.navbar-toggler data-target="#mainHeaderMenu" data-toggle="collapse" type="button"
-/       span.toggler-icon
-/         div
-/         div
-/         div
-/         div
+      button.navbar-toggler data-target="#mainHeaderMenu" data-toggle="collapse" type="button"
+        span.toggler-icon
+          div
+          div
+          div
+          div
 
 
-/     ul.nav.navbar-nav.main-header__menu data-is-main-menu=""
-/       //!\\ TODO : Ajouter classe active
-/       li
-/         = link_to "Accueil", root_path, class:"nav-link", data: {trigger_transition_page: ""}
-/       li
-/         = link_to "Annonces", posts_path, class:"nav-link", data: {trigger_transition_page: ""}
-/       li
-/         = link_to "Aide", help_path, class:"nav-link", data: {trigger_transition_page: ""}
+      ul.nav.navbar-nav.main-header__menu.collapse.navbar-collapse#mainHeaderMenu data-is-main-menu=""
+        //!\\ TODO : Ajouter classe active
+        li.nav-item.nav-item--btn
+          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+            span Devenir coach
+        li.nav-item
+          = link_to "Connexion", "#", class: "nav-link", data: {trigger_transition_page: ""}
+        li.nav-item
+          = link_to "Annonces", posts_path, class: "nav-link", data: {trigger_transition_page: ""}
+        li.nav-item
+          = link_to "Aide", help_path, class: "nav-link", data: {trigger_transition_page: ""}
 
-/       - if logged_in?
-/         - if current_user.admin?
-/           li = link_to "Utilisateurs", users_path, class:"nav-link", data: {trigger_transition_page: ""}
+        - if logged_in?
+          - if current_user.admin?
+            li.nav-item
+              = link_to "Utilisateurs", users_path, class: "nav-link", data: {trigger_transition_page: ""}
 
-/         li.dropdown
-/           a.dropdown-toggle href="#" data-toggle="dropdown"
-/             | Compte
-/           ul.dropdown-menu
-/             li = link_to "Profil", current_user, class:"nav-link", data: {trigger_transition_page: ""}
-/             li = link_to "Paramètres", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              | Compte
+            ul.dropdown-menu
+              li.nav-item
+                = link_to "Profil", current_user, class: "nav-link", data: {trigger_transition_page: ""}
+              li.nav-item
+                = link_to "Paramètres", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
 
-/             - if current_user.coach?
-/               li = link_to "Créer une annonce", new_post_path, class:"nav-link", data: {trigger_transition_page: ""}
+              - if current_user.coach?
+                li.nav-item
+                  = link_to "Créer une annonce", new_post_path, class:"nav-link", data: {trigger_transition_page: ""}
 
-/             - else
-/               li = link_to "Devenir coach", become_coach_url(fname: @current_user.fname), class:"nav-link", data: {trigger_transition_page: ""}
+              - else
+                li.nav-item
+                  = link_to "Devenir coach", become_coach_url(fname: @current_user.fname), class:"nav-link", data: {trigger_transition_page: ""}
 
-/             li = link_to "Déconnexion", logout_path, method: :delete, class:"nav-link", data: {trigger_transition_page: ""}
+              li.nav-item
+                = link_to "Déconnexion", logout_path, method: :delete, class:"nav-link", data: {trigger_transition_page: ""}
 
-/     .activer data-is-activer=""
+      / .nav-item.nav-item--action
 
-/     .nav-item.nav-item--action
+      /   .nav-social
+      /     = link_to 'https://www.facebook.com/unhameauaucoeurdecombloux/?ref=bookmarks', class: 'nav-link', target: '_blank' do
+      /       span.shb-facebook
+      /     = link_to 'https://www.instagram.com/un.hameau.au.coeur.de.combloux/', class: 'nav-link', target: '_blank' do
+      /       span.shb-instagram
 
-/       .nav-social
-/         = link_to 'https://www.facebook.com/unhameauaucoeurdecombloux/?ref=bookmarks', class: 'nav-link', target: '_blank' do
-/           span.shb-facebook
-/         = link_to 'https://www.instagram.com/un.hameau.au.coeur.de.combloux/', class: 'nav-link', target: '_blank' do
-/           span.shb-instagram
+      /   .nav-switch-wrapper
+      /     / .nav-season
+      /     /   - Season.all.each do |season|
+      /     /     - unless season == @season
+      /     /       = link_to season_path(season), class: 'nav-link link-icon', data: {trigger_transition_page: ""} do
+      /     /         span class="icon-#{season.name}"
+      /     /         span.text= I18n.t(season.name)
 
-/       .nav-switch-wrapper
-/         / .nav-season
-/         /   - Season.all.each do |season|
-/         /     - unless season == @season
-/         /       = link_to season_path(season), class: 'nav-link link-icon', data: {trigger_transition_page: ""} do
-/         /         span class="icon-#{season.name}"
-/         /         span.text= I18n.t(season.name)
-
-/         / .nav-language
-/         /   - I18n.available_locales.each do |locale|
-/         /     - unless I18n.locale == locale
-/         /       = link_to locale, season_path(@season, locale: locale.to_s), class: 'nav-link', data: {trigger_transition_page: ""}
+      /     / .nav-language
+      /     /   - I18n.available_locales.each do |locale|
+      /     /     - unless I18n.locale == locale
+      /     /       = link_to locale, season_path(@season, locale: locale.to_s), class: 'nav-link', data: {trigger_transition_page: ""}
