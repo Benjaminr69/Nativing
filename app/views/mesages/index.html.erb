@@ -1,0 +1,30 @@
+<% if @over_ten %>
+ <%= link_to ‘Show Previous’, ‘?m=all’ %>
+<% end %>
+<div class=”ui segment”>
+ <% @mesages.each do |mesage| %>
+  <% if mesage.body %>
+   <% user = User.find(mesage.user_id) %>
+   <div class=”item”>
+    <div class=”content”>
+     <div class=”header”><strong><%= user.first_name %></strong>     <%= mesage.mesage_time %></div>
+      <div class=”list”>
+       <div class=”item”>
+        <i class=”right triangle icon”></i>
+         <%= mesage.body %>
+      </div>
+    </div>
+   </div>
+ </div>
+ <% end %>
+<% end %>
+</div>
+<%= form_for [@conversation, @mesage], html: {class: “ui reply form”} do |f| %>
+ <div class=”field”>
+   <%= f.text_area :body, class: “form-control” %>
+ </div>
+ <%= f.text_field :user_id, value: current_user.id, type: “hidden” %>
+ <div>
+   <%= f.submit “Add Reply”, class: “ui blue labeled submit icon button” %>
+ </div>
+<% end %>
