@@ -19,6 +19,11 @@
 //= require filterrific/filterrific-jquery
 //= require jquery-ui/widgets/datepicker
 
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+
 // This function is call when Google Maps is loaded
 window.googleMapInitialize = function(){
 

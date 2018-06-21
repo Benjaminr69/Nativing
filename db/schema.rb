@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605154046) do
+ActiveRecord::Schema.define(version: 20180620094754) do
 
   create_table "ads", force: :cascade do |t|
     t.text "content"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20180605154046) do
     t.index ["user_id", "event_id"], name: "index_events_users_on_user_id_and_event_id"
   end
 
+  create_table "hearts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_hearts_on_post_id"
+    t.index ["user_id"], name: "index_hearts_on_user_id"
+  end
+
   create_table "post_attachments", force: :cascade do |t|
     t.integer "post_id"
     t.string "avatar"
@@ -61,6 +70,11 @@ ActiveRecord::Schema.define(version: 20180605154046) do
     t.index ["availability_id"], name: "index_posts_on_availability_id"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "posts_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
   end
 
   create_table "spoken_languages", force: :cascade do |t|
@@ -118,8 +132,10 @@ ActiveRecord::Schema.define(version: 20180605154046) do
     t.string "country"
     t.integer "postal_code"
     t.integer "availability_id"
+    t.integer "post_id"
     t.index ["availability_id"], name: "index_users_on_availability_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["post_id"], name: "index_users_on_post_id"
   end
 
 end

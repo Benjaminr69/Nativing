@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 	resources :users
   get 'signup' => 'users#new'
   post '/signup' => 'users#create'
+  get 'index' => 'users#index'
 
   resources :users do
     post :coach
@@ -33,6 +34,10 @@ Rails.application.routes.draw do
   post 'become_coach', to: 'messages#create'
 
   resources :posts
+
+  resources :users do
+    resources :post
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

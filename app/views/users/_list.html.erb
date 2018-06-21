@@ -5,14 +5,20 @@
   </div>
 
 <% @users.each do |user| %>
-    <h1><%= user.fname %> <%= user.lname %></h1>
-      <h2><%= user.mother_tongue %></h2>
-    <center>
-      <p><%= user.postal_code %> <%= user.locality %></p>
+	<% if user.coach? %>
+    	<h1><%= user.fname %> <%= user.lname %></h1>
+      	<h2><%= user.mother_tongue %></h2>
+    	<center>
+      		<p><%= user.postal_code %> <%= user.locality %></p>
 
-      <p><%= link_to "En savoir plus", user_path(user) %></p>
-    </center>
+      		<p><%= link_to "En savoir plus" user.post %></p>
+    	</center>
+      <% if @current_user.admin? %>
+        <%= link_to "Supprimer" delete_path %>
+      <% end %>
+  <% end %>
 <% end %>
 </div>
+
 
 <%= will_paginate users %>

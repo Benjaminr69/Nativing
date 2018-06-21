@@ -5,10 +5,11 @@ class User < ApplicationRecord
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_and_belongs_to_many :spoken_languages
+  validates_uniqueness_of :post_id
   # Add a virtual field named `address` and a class method `address_fields` returning `JT::Rails::Address.fields` prefixed by `address_` in this case
   has_address :address
-  has_many :posts
-  has_and_belongs_to_many :availability
+  has_one :post
+  has_many :availabilities
 
   include Filterable
 
@@ -34,16 +35,14 @@ class User < ApplicationRecord
   )
 
   scope :with_mother_tongue, -> (search_string) {
-  where("users.mother_tongue ILIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
+  where("users.mother_tongue LIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
   }
 
   scope :with_locality, -> (search_string) {
-    where("users.locality ILIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
+    where("users.locality LIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
   }
 
-  scope :with_start_time_gte, lambda { |ref_date|
-    where('availability.start_time >= ?', ref_date)
-  }
+  scope :with_start_time_gte, -> (ref_date) { joins(:availabilities).where('availabilities.start_time >= ?', ref_date) }
 
 	# Returns the hash digest of the given string.
   def User.digest(string)

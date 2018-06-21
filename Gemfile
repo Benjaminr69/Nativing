@@ -47,6 +47,7 @@ gem 'figaro'
 gem 'carrierwave'
 gem "simple_calendar", "~> 2.0"
 gem 'filterrific'
+gem 'bootstrap-datepicker-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

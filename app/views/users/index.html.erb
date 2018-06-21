@@ -1,4 +1,8 @@
-<% provide(:title, 'Liste des utilisateurs') %>
+<script type="text/javascript">
+  $('[data-behaviour~=datepicker]').datepicker();
+</script>
+
+<% provide(:title, 'Liste des utilisateurs') %><br><br><br>
 <h1>Liste des utilisateurs :</h1>
 
 <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
@@ -18,7 +22,7 @@
 </div>
 <div>
   Date de départ :
-    <%= f.text_field(:with_start_time_gte, class: 'js-datepicker') %>
+    <%= f.text_field :with_start_time_gte, 'data-provide' => 'datepicker' %>
 </div>
   <%= f.submit 'Rechercher' %>
 
@@ -32,7 +36,11 @@
   <%= render_filterrific_spinner %>
 <% end %>
 
-<%= render(
-  partial: 'users/list',
-  locals: { users: @users }
-) %>
+<% if @current_user.admin? %>
+  <%= render 'user' %>
+<% else %>
+  <%= render(
+    partial: 'users/list',
+    locals: { users: @users }
+  ) %>
+<% end %>

@@ -1,14 +1,42 @@
-<h1>Annonces</h1>
+<script type="text/javascript">
+  $('[data-behaviour~=datepicker]').datepicker();
+</script>
 
-<%= will_paginate %>
+<% provide(:title, 'Liste des annnonces') %><br><br><br>
+<h1>Liste des annonces :</h1>
 
-<% @posts.each do |post| %>
-    <h1><%= post.user.fname %> <%= post.user.lname %></h1>
-    	<h2><%= post.user.mother_tongue %></h2>
-    <center>
-    	<p><%= post.user.postal_code %> <%= post.user.locality %></p>
+<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+<div>
+  Langue :
+  <%= f.text_field(
+  :with_mother_tongue,
+  class: 'mother_tongue filterrific-periodically-observed'
+) %>
+</div>
+<div>
+  Ville :
+    <%= f.text_field(
+  :with_locality,
+  class: 'locality filterrific-periodically-observed'
+) %>
+</div>
+<div>
+  Date de départ :
+    <%= f.text_field :with_start_time_gte, 'data-provide' => 'datepicker' %>
+</div>
+  <%= f.submit 'Rechercher' %>
 
-     	<p><%= link_to "En savoir plus", post %></p>
-    </center>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+
+  <%= render_filterrific_spinner %>
 <% end %>
-<%= will_paginate %>
+
+  <%= render(
+    partial: 'posts/list',
+    locals: { posts: @posts }
+  ) %>
