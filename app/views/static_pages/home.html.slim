@@ -28,9 +28,9 @@
 
 
 
-  // HERO IMAGE
+  // HERO BTN HALO
   // ---------------------------------------------------------
-  .hero__btn
+  = link_to "#", class: 'btn btn--halo' do
     = image_tag 'icons/play-button.svg'
 
 
@@ -39,13 +39,13 @@
   // HERO ACTION
   // ---------------------------------------------------------
 
-  ///// HERO ACTION (scroll)
+  ///// HERO ACTION
   .hero__action-wrapper
     .container
       .hero__action
 
         .hero__action--scroll
-          = link_to "#", class: 'link-scroll' do
+          = link_to "#scroll", class: 'link-scroll', data: {trigger_smooth_scroll:""} do
             span.scroll-indicator
               .scroll__border
               .scroll__dot
@@ -70,7 +70,7 @@
 ////////////////////
 // CARD
 ////////////////////////////////////////////////////////////////////////////////
-section.section--primary
+section.section--primary#scroll
   .container
     h2
       div Nativing pour progresser en langue
