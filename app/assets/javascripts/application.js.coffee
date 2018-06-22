@@ -37,3 +37,5 @@ $ ->
   new ScrollTo()
 
   new HomeVideo()
+
+  new Sliders()
