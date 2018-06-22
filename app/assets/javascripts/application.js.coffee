@@ -28,6 +28,8 @@
 
 $ ->
 
+  new HeaderActive()
+
   new ImageObjectFit()
 
   new imageLoadList()
