@@ -35,3 +35,5 @@ $ ->
   new imageLoadList()
 
   new ScrollTo()
+
+  new HomeVideo()

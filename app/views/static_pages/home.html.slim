@@ -1,7 +1,7 @@
 ////////////////////
 // HERO FULL HEIGHT
 ////////////////////////////////////////////////////////////////////////////////
-.hero.hero--fh
+.hero.hero--fh data-is-teaser=""
 
 
 
@@ -26,11 +26,13 @@
   .hero__image
     = image_tag "home/home_background.jpg", class: 'img-cover'
 
+  .hero__image--video
+
 
 
   // HERO BTN HALO
   // ---------------------------------------------------------
-  = link_to "#", class: 'btn btn--halo' do
+  .btn.btn--halo data-trigger-video=""
     = image_tag 'icons/play-button.svg'
 
 
