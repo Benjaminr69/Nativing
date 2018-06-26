@@ -42,6 +42,9 @@ header.main-header
               li.nav-item
                 = link_to "Paramètres", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
 
+              li.nav-item
+                  = link_to "Messagerie", conversations_path, class:"nav-link", data: {trigger_transition_page: ""}
+
               - if current_user.coach?
                 li.nav-item
                   = link_to "Créer une annonce", new_post_path, class:"nav-link", data: {trigger_transition_page: ""}

@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-	before_action :authenticate_user
+	before_action :current_user
 
 	def index
 		@users = User.all
@@ -14,7 +14,7 @@ class ConversationsController < ApplicationController
   		@conversation = Conversation.create!(conversation_params)
  	end
 
- 	redirect_to conversation_messages_path(@conversation)
+ 	redirect_to conversation_mesages_path(@conversation)
 	end
 
 private
