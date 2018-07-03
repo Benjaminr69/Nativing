@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620094754) do
+ActiveRecord::Schema.define(version: 20180703074100) do
 
   create_table "ads", force: :cascade do |t|
     t.text "content"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20180620094754) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events_users", id: false, force: :cascade do |t|
     t.integer "event_id", null: false
     t.integer "user_id", null: false
@@ -51,6 +58,17 @@ ActiveRecord::Schema.define(version: 20180620094754) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_hearts_on_post_id"
     t.index ["user_id"], name: "index_hearts_on_user_id"
+  end
+
+  create_table "mesages", force: :cascade do |t|
+    t.text "body"
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_mesages_on_conversation_id"
+    t.index ["user_id"], name: "index_mesages_on_user_id"
   end
 
   create_table "post_attachments", force: :cascade do |t|
@@ -70,11 +88,6 @@ ActiveRecord::Schema.define(version: 20180620094754) do
     t.index ["availability_id"], name: "index_posts_on_availability_id"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "posts_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "post_id", null: false
   end
 
   create_table "spoken_languages", force: :cascade do |t|

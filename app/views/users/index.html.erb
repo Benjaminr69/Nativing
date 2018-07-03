@@ -36,7 +36,7 @@
   <%= render_filterrific_spinner %>
 <% end %>
 
-<% if @current_user.admin? %>
+<% if @current_user && @current_user.admin? %>
   <%= render 'user' %>
 <% else %>
   <%= render(

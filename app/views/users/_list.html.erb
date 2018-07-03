@@ -11,10 +11,10 @@
     	<center>
       		<p><%= user.postal_code %> <%= user.locality %></p>
 
-      		<p><%= link_to "En savoir plus" user.post %></p>
+      		<p><%= link_to "En savoir plus", user.post %></p>
     	</center>
       <% if @current_user.admin? %>
-        <%= link_to "Supprimer" delete_path %>
+        <%= link_to "Supprimer", delete_path %>
       <% end %>
   <% end %>
 <% end %>
