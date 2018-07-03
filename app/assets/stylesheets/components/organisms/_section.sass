@@ -5,6 +5,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 section
   padding: 5rem 0
+  position: relative
   width: 100%
 
 
@@ -14,6 +15,8 @@ section
 ////////////////////
 // SECTION COLOR
 ////////////////////////////////////////////////////////////////////////////////
+
+///// SECTION PRIMARY
 .section--primary
   background-color: $primary
   padding: 7rem 0
@@ -27,7 +30,17 @@ section
     text-transform: none
 
 
+///// SECTION GRAY LIGHT
 .section--gray-light
   background-color: $gray-light
   padding: 7rem 0
   color: $gray-dark
+  &.section--gray-light--no-padding
+    padding: 0
+
+  h2, h3, h4, h5, h6
+    color: $gray-dark
+    margin-top: 0
+    margin-bottom: 4rem
+    text-align: left
+    text-transform: none

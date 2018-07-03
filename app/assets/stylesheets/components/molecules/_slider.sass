@@ -1,0 +1,149 @@
+// NATIVING - Component Molecules sldier.sass - Digital Campus 2018
+
+////////////////////
+// SLIDER LARGE
+////////////////////////////////////////////////////////////////////////////////
+.slider--lg
+  height: 40rem
+  margin-bottom: 2rem
+  position: relative
+  .slick-list,
+  .slick-track,
+  .item
+    height: 100%
+
+
+  ///// ITEM
+  .item
+    &::after
+      background-color: rgba($secondary, .3)
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 5
+
+  .slide__title
+    align-items: center
+    bottom: 1rem
+    color: $white
+    display: flex
+    font-size: 3rem
+    font-weight: 700
+    right: 3rem
+    position: absolute
+    padding: 1rem
+    text-transform: uppercase
+    z-index: 6
+
+    &:hover
+      img
+        margin-right: -0.5rem
+
+    img
+      margin-left: 2rem
+      margin-top: -0.2rem
+      transform: rotate(180deg)
+      transition: all $transition-default
+      width: 3rem
+
+
+
+
+
+////////////////////
+// SLIDER NAV
+////////////////////////////////////////////////////////////////////////////////
+.slider--nav
+  height: 20rem
+  position: relative
+  .slick-list,
+  .slick-track,
+  .item
+    height: 100%
+
+
+  ///// ITEM
+  .item
+    margin: 0 1rem
+    position: relative
+    &::after
+      background-color: rgba($secondary, .3)
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      transition: all $transition-default
+      width: 100%
+      z-index: 5
+    &::before
+      background-color: $primary
+      bottom: 0
+      content: ''
+      height: 0.3rem
+      left: 0
+      position: absolute
+      transition: all $transition-default
+      width: 0
+      z-index: 6
+    &:focus
+      outline: none
+    &:hover
+      cursor: pointer
+      &::after
+        background-color: transparent
+
+    &.slick-current
+      &::before
+        width: 100%
+
+    .slide__title
+      bottom: 1rem
+      color: $white
+      font-size: 1.5rem
+      font-weight: 700
+      left: 1.5rem
+      position: absolute
+      text-transform: uppercase
+      z-index: 6
+
+
+  ///// SLICK DOTS
+  .slick-dots
+    padding-left: 0
+    right: calc(100% + 10rem)
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    li
+      height: 2.5rem
+      list-style: none
+      position: relative
+      width: 3.5rem
+      &::after
+        background-color: $gray-dark
+        content: ''
+        height: 0.2rem
+        left: 50%
+        opacity: 0.5
+        position: absolute
+        top: 50%
+        transform: translate(-50%, -50%)
+        transition: all $transition-default
+        width: 100%
+      &:hover
+        cursor: pointer
+        &::after
+          width: 4.5rem
+
+      &.slick-active
+        &::after
+          background-color: $primary
+          opacity: 1
+          width: 4.5rem
+
+    button
+      display: none
