@@ -1,0 +1,74 @@
+// NATIVING - Component Molecules thumb.sass - Digital Campus 2018
+
+////////////////////
+// THUMB DEFAULT
+////////////////////////////////////////////////////////////////////////////////
+.thumb
+  position: relative
+
+
+
+
+
+////////////////////
+// THUMB PROFILE
+////////////////////////////////////////////////////////////////////////////////
+.thumb--profile
+  align-items: center
+  background-color: $white
+  border-radius: 1rem
+  box-shadow: 0rem 0.2rem 0.7rem 0rem rgba($black, .2)
+  display: flex
+  justify-content: center
+  flex-direction: column
+  padding: 3rem
+
+
+  .thumb__image
+    border-radius: 50%
+    height: 11rem
+    margin-bottom: 2.5rem
+    overflow: hidden
+    width: 11rem
+    img
+      transition: all $transition-default
+    &:hover
+      img
+        transform: scale(1.05, 1.05)
+
+
+  .thumb__title
+    font-size: 2.5rem
+    font-weight: 700
+    line-height: 1
+    margin-bottom: 1rem
+
+
+  .thumb__speciality
+    font-size: 1.6rem
+    line-height: 1
+    margin-bottom: 1rem
+
+
+  .thumb__location
+    align-items: center
+    display: flex
+    font-size: 1.6rem
+    justify-content: center
+    line-height: 1
+    margin-bottom: 2.5rem
+    img
+      margin-right: 0.5rem
+      width: 2rem
+
+
+  .thumb__favorite
+    position: absolute
+    right: 1.5rem
+    top: 1.5rem
+    i
+      color: rgba($gray-dark, .2)
+      transition: $transition-default
+    &:hover
+      i
+        color: $primary

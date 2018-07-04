@@ -1,9 +1,74 @@
 ////////////////////
 /! FOOTER
 ////////////////////////////////////////////////////////////////////////////////
-footer.footer
-  nav
-    ul
-      li = link_to "A propos", about_path
-      li = link_to "Contact", contact_path
-      li = link_to "Inscription", signup_path
+/ footer.footer
+/   nav
+/     ul
+/       li = link_to "A propos", about_path
+/       li = link_to "Contact", contact_path
+/       li = link_to "Inscription", signup_path
+
+footer.main-footer
+  .container
+
+    .footer-logo
+      | LOGO
+
+    hr
+
+    .footer-blocks
+      .row
+        .col-md-6
+          .footer-title Project
+          div 22 rue de la République
+          div 69002 Lyon
+          div
+            ' Téléphone:
+            = link_to "04 78 89 22 78", "tel:0478892278", class: ''
+
+
+        .col-md-6
+          .footer-social.text-md-right
+            .footer-title Réseaux sociaux
+            .footer-social__links
+              = link_to "#" do
+                .shb-facebook
+              = link_to "#" do
+                .shb-instagram
+              = link_to "#" do
+                .shb-twitter
+              = link_to "#" do
+                .shb-linkedin
+              = link_to "#" do
+                .shb-pinterest
+
+    .footer-bar
+      nav.navbar.navbar-expand-md
+        / button.btn.navbar-toggler.collapsed aria-controls="mainFooterMenu" aria-expanded="false" aria-label=("Toggle navigation") data-target="#mainFooterMenu" data-toggle="collapse" type="button"
+        /   ' Menu
+        #mainFooterMenu.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              = link_to 'Accueil', "#", class: "nav-link"
+            li.nav-item
+              = link_to 'Administration', "#", class: "nav-link"
+            li.nav-item
+              = link_to 'Contact', "#", class: "nav-link"
+            li.nav-item
+              = link_to 'Actualités', "#", class: "nav-link"
+
+
+      nav.navbar.navbar-expand-md
+        / button.btn.navbar-toggler.collapsed aria-controls="mainFooterLanguage" aria-expanded="false" aria-label=("Toggle navigation") data-target="#mainFooterLanguage" data-toggle="collapse" type="button"
+        /   ' Langues
+        #mainFooterLanguage.collapse.navbar-collapse
+          ul.navbar-nav
+                li.nav-item
+                  = link_to 'FR', '#', class: 'nav-link'
+                li.nav-item
+                  = link_to 'EN', '#', class: 'nav-link'
+
+
+        .footer-legals
+          .footer-time © #{Date.today.year} Project
+
