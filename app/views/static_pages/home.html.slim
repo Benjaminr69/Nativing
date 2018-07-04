@@ -54,15 +54,15 @@
             span scroll
 
         .hero__action--social data-is-nav=""
-          = link_to "#", class: 'action-icon', target: '_blank' do
+          = link_to "https://www.facebook.com/nativing/", class: 'action-icon', target: '_blank' do
             = image_tag "icons/facebook-logo.svg"
-          = link_to "#", class: 'action-icon', target: '_blank' do
+          = link_to "https://twitter.com/HelloNativing", class: 'action-icon', target: '_blank' do
             = image_tag "icons/twitter-logo.svg"
-          = link_to "#", class: 'action-icon', target: '_blank' do
+          = link_to "https://www.linkedin.com/company/nativing/", class: 'action-icon', target: '_blank' do
             = image_tag "icons/linkedin-logo.svg"
-          = link_to "#", class: 'action-icon', target: '_blank' do
+          = link_to "https://www.instagram.com/nativing/", class: 'action-icon', target: '_blank' do
             = image_tag "icons/instagram-logo.svg"
-          = link_to "#", class: 'action-icon', target: '_blank' do
+          = link_to "https://www.youtube.com/channel/UCV97pGhTGHCdTLy6Q7hVNuw", class: 'action-icon', target: '_blank' do
             = image_tag "icons/youtube-logo.svg"
 
 
@@ -74,11 +74,24 @@
 ////////////////////////////////////////////////////////////////////////////////
 section.section--primary#scroll
   .container
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
     h2
       div Nativing pour progresser en langue
       div de manière informelle, en
       div.font--bold immersion totale chez l'habitant.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
     .row
+
+
+      ///// CARD 1
       .col-md-4
         .card.card--dot
           .card__title
@@ -89,6 +102,9 @@ section.section--primary#scroll
             p
               span.font--bold> Partez
               | à travers le monde pour vivre une expérience à votre image, afin d'apprendre une nouvelle langue.
+
+
+      ///// CARD 2
       .col-md-4
         .card.card--dot
           .card__title
@@ -99,6 +115,9 @@ section.section--primary#scroll
             p
               span.font--bold> Expérimentez
               | la découverte d'une culture différente, en choisissant l'un des hôte certifié Nativing.
+
+
+      ///// CARD 3
       .col-md-4
         .card.card--dot
           .card__title
@@ -121,12 +140,25 @@ section.section--primary#scroll
 section.section--gray-light.section--gray-light--no-padding
   .container
     .row
+
+
+
+      // TITLE
+      // ---------------------------------------------------------
       .col-md-2.position--relative
         h2.title--absolute
           div Un projet, une destination
           div Parcourez le monde avec
           div.font--bold Nativing.
+
+
+
+      // SLIDER
+      // ---------------------------------------------------------
       .col-md-10
+
+
+        ///// SLIDER LG
         .slider.slider--lg#sliderHome data-is-slider='{"arrows": false, "dots": false, "fade": true, "asNavFor": "#sliderHomeNav"}'
           .item
             = image_tag 'home/slider-1.jpg', class: 'img-cover'
@@ -159,6 +191,8 @@ section.section--gray-light.section--gray-light--no-padding
               span
                 = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
 
+
+        ///// SLIDER NAV
         .slider.slider--nav#sliderHomeNav data-is-slider='{"arrows": false, "slidesToShow": 3, "slidesToScroll": 1, "asNavFor": "#sliderHome", "dots": true, "centerMode": true, "focusOnSelect": true}'
           .item
             = image_tag 'home/slider-1.jpg', class: 'img-cover'
@@ -184,3 +218,158 @@ section.section--gray-light.section--gray-light--no-padding
 // THUMB PROFIL
 ////////////////////////////////////////////////////////////////////////////////
 section.section--gray-light
+  .container
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2
+      div Découvrez les hotes natifs,
+      div.font--bold certifiés Nativing.
+
+
+
+    // THUMBS
+    // ---------------------------------------------------------
+    .row
+
+
+      ///// THUMB 1
+      .col-md-3
+        .thumb.thumb--profile
+          = link_to "#", class: 'thumb__image' do
+            = image_tag 'avatar.jpg', class: 'img-cover'
+          = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+          .thumb__speciality Francais
+          .thumb__location
+            span
+              = image_tag 'icons/placeholder.svg'
+            span 69004 Lyon
+          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+            span En savoir plus
+          = link_to "#", class: 'thumb__favorite' do
+            i.material-icons favorite
+
+      ///// THUMB 2
+      .col-md-3
+        .thumb.thumb--profile
+          = link_to "#", class: 'thumb__image' do
+            = image_tag 'avatar.jpg', class: 'img-cover'
+          = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+          .thumb__speciality Francais
+          .thumb__location
+            span
+              = image_tag 'icons/placeholder.svg'
+            span 69004 Lyon
+          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+            span En savoir plus
+          = link_to "#", class: 'thumb__favorite' do
+            i.material-icons favorite
+
+
+
+
+      ///// THUMB 3
+      .col-md-3
+        .thumb.thumb--profile
+          = link_to "#", class: 'thumb__image' do
+            = image_tag 'avatar.jpg', class: 'img-cover'
+          = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+          .thumb__speciality Francais
+          .thumb__location
+            span
+              = image_tag 'icons/placeholder.svg'
+            span 69004 Lyon
+          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+            span En savoir plus
+          = link_to "#", class: 'thumb__favorite' do
+            i.material-icons favorite
+
+
+
+      ///// THUMB 4
+      .col-md-3
+        .thumb.thumb--profile
+          = link_to "#", class: 'thumb__image' do
+            = image_tag 'avatar.jpg', class: 'img-cover'
+          = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+          .thumb__speciality Francais
+          .thumb__location
+            span
+              = image_tag 'icons/placeholder.svg'
+            span 69004 Lyon
+          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+            span En savoir plus
+          = link_to "#", class: 'thumb__favorite' do
+            i.material-icons favorite
+
+
+    .row
+      .col-lg-12.text-center.m-t-50
+        = link_to "#", class: "btn btn-primary nav-link btn-outline", data: {trigger_transition_page: ""} do
+          span Tous les coachs
+
+
+
+
+
+////////////////////
+// CARD RASSURANCE
+////////////////////////////////////////////////////////////////////////////////
+section.section--primary#scroll
+  .container
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2
+      div Nativing pour voyager l'esprit
+      span> léger, en toute
+      span.font--bold sécurité.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
+    .row
+
+
+      ///// CARD 1
+      .col-md-4
+        .card.card--dot
+          .card__title
+            .card__dot
+              / = image_tag 'icons/trophy.svg'
+            h3 Certification
+          .card__content
+            p
+              span> Voyagez en toute sécurité, grâce à des coachs
+              span.font--bold sélectionnés et certifiés par Nativing.
+
+
+      ///// CARD 2
+      .col-md-4
+        .card.card--dot
+          .card__title
+            .card__dot
+              p 2
+            h3 Paiement
+          .card__content
+            p
+              span> Le site web de Nativing dispose d’une fonctionnalité de paiement sécurisé
+              span.font--bold pour voyager en toute tranquillité
+
+
+      ///// CARD 3
+      .col-md-4
+        .card.card--dot
+          .card__title
+            .card__dot
+              p 3
+            h3 Adresse
+          .card__content
+            p
+              span> Pour toute question ou demande, n’hésitez pas à
+              span.font--bold contacter Nativing ou à vous déplacer directement chez nous.
