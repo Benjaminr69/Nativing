@@ -126,3 +126,28 @@
       padding-bottom: 0.1rem * $i !important
 
 @include createPadding(0, 100)
+
+
+
+
+/// FLUID TYPO
+//!\\ Usage :  +fluid-size(tailleMinDecran, tailleMaxDecran, FontSizeMin, FontSizeMax).
+//!\\ Arguments: On choisi une taille min & max d'écran ou les font size seront bloqués (FontSizeMin & FFontSizeMax)
+//!\\ Retourne un calc qui ajuste la font size de manière fluide
+//!\\ cf https://css-tricks.com/snippets/css/fluid-sizegraphy/
+@function strip-unit($value)
+  @return $value / ($value * 0 + 1)
+
+@mixin fluid-size($min-vw, $max-vw, $min-font-size, $max-font-size, $property: 'font-size')
+  $u1: unit($min-vw)
+  $u2: unit($max-vw)
+  $u3: unit($min-font-size)
+  $u4: unit($max-font-size)
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
+    &
+      #{$property}: $min-font-size
+      @media screen and (min-width: $min-vw)
+        #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))
+      @media screen and (min-width: $max-vw)
+        #{$property}: $max-font-size
