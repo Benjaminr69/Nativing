@@ -1,0 +1,97 @@
+// PROJECT - Responsive Layout FOOTER - Studio HB 2017
+
+////////////////////
+// SM & <
+////////////////////////////////////////////////////////////////////////////////
+$footer-link-padding-x: 2rem
+$footer-link-padding-y: 2rem
+
+@media (max-width: 776px - 1px)
+
+  ///// MAIN FOOTER
+  .main-footer
+    hr
+      margin-top: 1rem
+      margin-bottom: 1rem
+
+  .footer-logo
+    width: 18rem
+
+  .footer-bar,
+  .footer-legals
+    display: block
+
+    a,
+    .footer-time,
+    .nav-link
+      padding-left: $footer-link-padding-x
+      padding-right: $footer-link-padding-x
+
+  .footer-basics
+    margin-left: 0
+    margin-right: 0
+    padding-top: $footer-link-padding-y
+
+    a
+      border-top: 1px solid $footer-border-color
+      display: block
+      margin-left: 0
+      margin-right: 0
+      padding-top: $footer-link-padding-y
+      padding-bottom: $footer-link-padding-y
+
+
+  ///// FOOTER BAR
+  .footer-bar
+    border-top: 0 none
+    padding-top: 0
+    padding-bottom: 0
+
+    .navbar-toggler
+      border-top: 1px solid $footer-border-color
+      color: $gray-smooth
+      display: block
+      font-size: $text-font-size
+      padding-left: $footer-link-padding-x
+      padding-right: $footer-link-padding-x
+      // padding-bottom: calc(#{$footer-link-padding-y} - 1rem)
+      padding-top: $footer-link-padding-y
+      padding-bottom: 0.1rem
+      position: relative
+      text-transform: uppercase
+      text-align: left
+      width: 100%
+      // after
+      &::after
+        content: '\e98b'
+        font-size: 2em
+        position: absolute
+        right: 1rem
+        top: calc(50% - 0.2em)
+        transform: rotate(90deg)
+        transition: transform $transition-default
+
+      &.collapsed
+        &::after
+          transform: rotate(0deg)
+
+    .navbar
+      padding-bottom: $footer-link-padding-y - 0.2rem
+
+    .navbar-nav
+      padding-top: $footer-link-padding-y * 0.5
+
+    .nav-item + .nav-item
+      margin-left: 0
+      margin-top: 0.3rem
+
+    .nav-link
+      display: inline-block
+
+
+  ///// FOOTER BLOCKS
+  .footer-blocks
+    text-align: center
+
+    .footer-title
+      margin-top: $footer-link-padding-y

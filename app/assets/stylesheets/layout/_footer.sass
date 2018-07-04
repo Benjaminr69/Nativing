@@ -1,0 +1,110 @@
+////////////////////
+// FOOTER
+////////////////////////////////////////////////////////////////////////////////
+
+$footer-border-color: rgba($white, .2)
+
+
+
+// MAIN FOOTER
+// ---------------------------------------------------------
+
+///// MAIN FOOTER
+.main-footer
+  background-color: $gray-dark
+  border-top: none
+  color: $gray-light
+  min-height: 25rem
+  margin-top: 0
+  padding-top: 3rem
+  padding-bottom: 2rem
+
+  a
+    color: $white
+    &:hover,
+    &:focus
+      color: $white
+
+  hr
+    border-top-color: $footer-border-color
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+
+///// FOOTER TITLE
+.footer-title
+  color: $white
+  letter-spacing: 0.15rem
+  margin-bottom: 0.3rem
+  margin-top: 1rem
+  text-transform: uppercase
+
+
+///// FOOTER LOGO
+.footer-logo
+  font-size: 5rem
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  width: 22rem
+
+
+///// FOOTER SOCIAL LINKS
+.footer-social__links
+  margin-left: -0.3rem
+  margin-right: -0.3rem
+
+  a
+    display: inline-block
+    font-size: 3rem
+    margin-left: 0.3rem
+    margin-right: 0.3rem
+    opacity: .5
+    vertical-align: middle
+    &:hover
+      opacity: 1
+
+
+
+// FOOTER BAR
+// ---------------------------------------------------------
+.footer-bar
+  border-top: 1px solid $footer-border-color
+  border-bottom: 1px solid $footer-border-color
+  display: flex
+  justify-content: space-between
+  margin-top: 3rem
+  margin-bottom: 1.5rem
+  padding-top: 0.7rem
+  padding-bottom: 0.7rem
+  text-transform: uppercase
+
+  .nav-item + .nav-item
+    margin-left: 1rem
+
+  .navbar
+    padding: 0
+
+  .navbar-collapse
+    -ms-flex-preferred-size: auto //-> IE FIX
+
+
+///// FOOTER LEGALS
+.footer-legals
+  color: darken($gray-smooth, 10%)
+  display: flex
+  justify-content: space-between
+
+  a
+    color: darken($gray-smooth, 10%)
+
+
+///// FOOTER BASICS
+.footer-basics
+  margin-left: -1rem
+  margin-right: -1rem
+  text-transform: uppercase
+
+  a
+    margin-left: 1rem
+    margin-right: 1rem
