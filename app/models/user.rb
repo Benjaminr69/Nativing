@@ -88,7 +88,7 @@ class User < ApplicationRecord
 
   # creates a new heart row with post_id and user_id
   def heart!(post)
-    self.hearts.create!(post_id: @post.id)
+    self.hearts.create!(post_id: post.id)
   end
 
   # destroys a heart with matching post_id and user_id

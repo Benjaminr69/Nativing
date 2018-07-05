@@ -7,8 +7,5 @@
 
      	<p><%= link_to "En savoir plus", post %></p>
     </center>
-    <%= div_for post do %>
-     <%= render 'hearts/button', locals: { post: post } %>
-  	<% end %>
 <% end %>
 <%= will_paginate %>

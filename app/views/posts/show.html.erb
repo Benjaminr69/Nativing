@@ -11,11 +11,7 @@
 
 <%= link_to "Contacter #{@post.user.fname}", '#' %><br><br>
 
-<% if current_user.heart?(@post) %>
-  <%= link_to "Unheart", unheart_path(post_id: @post.id), remote: true, method: :delete  %>
-<% else %>
-  <%= link_to "Heart", heart_path(post_id: @post.id), remote: true  %>
-<% end %><br><br>
+    <%= render partial: 'hearts/button', locals: { post: @post } %><br><br>
 
 <% if @current_user == @post.user %>
 	<%= link_to "Editer", edit_post_path(@post) %>
