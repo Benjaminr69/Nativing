@@ -39,3 +39,7 @@ $ ->
   new HomeVideo()
 
   new Sliders()
+
+  new TransitionPage()
+
+  new ScrollDetection()

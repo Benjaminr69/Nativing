@@ -1,0 +1,131 @@
+// COMBLOUX - Component ANIMATION - Digital Campus 2018
+
+////////////////////
+// ANIMATION
+////////////////////////////////////////////////////////////////////////////////
+
+// FADE & FADE UP
+// ---------------------------------------------------------
+.anim-fade-up
+  opacity: 0
+  transform: translateY(1rem)
+
+
+.anim-fade-up
+  transition: opacity 700ms cubic-bezier(.81,.01,.47,.79) 200ms, transform 700ms cubic-bezier(.81,.01,.47,.79) 200ms
+  transition-delay: 200ms
+
+.anim-fade-up--slow
+  transition-delay: 1200ms
+
+
+.anim-fade
+  opacity: 0
+
+
+.anim-fade
+  transition: opacity 700ms cubic-bezier(.81,.01,.47,.79) 200ms
+
+
+.scroll-in
+  &.anim-fade-up,
+  .anim-fade-up
+    opacity: 1
+    transform: translateY(0rem)
+
+  &.anim-fade,
+  .anim-fade
+    opacity: 1
+
+
+
+// CASCAD
+// ---------------------------------------------------------
+.anim--cascad
+  .anim-fade,
+  .anim-fade-up
+    +transitionDelayUp(200ms, 1, 10)
+
+
+.anim--cascad.scroll-in
+  .anim-fade
+    opacity: 1
+
+
+
+
+
+////////////////////
+// SLIDE CONTENT
+////////////////////////////////////////////////////////////////////////////////
+
+// BASE
+// ---------------------------------------------------------
+.slide-content
+  position: relative
+  overflow: hidden
+  &::before
+    background-color: $white
+    content: ''
+    bottom: 0
+    left: 0%
+    right: 0
+    position: absolute
+    top: 0
+    z-index: 1 // above img-load
+    // transition: left 500ms cubic-bezier(.66,.1,.51,.51)
+    // transition: left 500ms cubic-bezier(.75,.09,.48,.65)
+    // transition: left 600ms cubic-bezier(.81,.01,.43,.65)
+    // transition: left 700ms cubic-bezier(.28,.04,.29,.93)
+    transition: left 700ms cubic-bezier(.75,.01,.53,.85)
+
+
+
+// STATES
+// ---------------------------------------------------------
+.slide-content,
+.tab-pane .slide-content,
+.tab-pane .scroll-in .slide-content
+
+  &::before
+    left: 0%
+
+
+.scroll-in,
+.tab-pane.active .scroll-in
+  .slide-content
+    &::before
+      left: 100%
+
+
+
+// COLORS
+// ---------------------------------------------------------
+.slide-content--primary-light
+  &::before
+    background-color: $primary-light
+
+
+
+
+
+////////////////////
+// LEAVE CONTENT
+////////////////////////////////////////////////////////////////////////////////
+.content-leave
+  .scroll-in.anim-fade-up,
+  .tab-pane.active .scroll-in.anim-fade-up
+    opacity: 0
+    transform: translateY(1rem)
+
+  .anim--cascad.scroll-in
+    .anim-fade
+      opacity: 0
+
+  .scroll-in,
+  .tab-pane.active .scroll-in
+    .slide-content
+      &::before
+        left: 0%
+
+
