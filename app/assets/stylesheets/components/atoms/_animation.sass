@@ -114,16 +114,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 .content-leave
   .scroll-in.anim-fade-up,
-  .tab-pane.active .scroll-in.anim-fade-up
+  .scroll-in .anim-fade-up
     opacity: 0
     transform: translateY(1rem)
 
   .anim--cascad.scroll-in
-    .anim-fade
+    .anim-fade,
+    .anim-fade-up
       opacity: 0
 
-  .scroll-in,
-  .tab-pane.active .scroll-in
+  .scroll-in
     .slide-content
       &::before
         left: 0%
