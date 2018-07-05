@@ -151,3 +151,21 @@
         #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))
       @media screen and (min-width: $max-vw)
         #{$property}: $max-font-size
+
+
+
+
+
+//Usage : +transitionDelayUp(280ms, 1, 10)
+// Arguments: $stepDuration: le délai que l'on veut ajouter
+//            $firstStep, $lastStep : les valeurs min/max de la boucle
+// Crée des delais de transitions en cascade
+@mixin transitionDelayUp($stepDuration, $firstStep, $lastStep)
+
+  $currentDuration: 0ms
+
+  @for $i from $firstStep through $lastStep
+    &:nth-child(#{$i})
+      transition-delay: $currentDuration
+
+    $currentDuration: $currentDuration + $stepDuration
