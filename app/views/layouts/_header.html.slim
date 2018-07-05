@@ -3,9 +3,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 header.main-header
   .container
-    nav.navbar.navbar-expand-md
+    nav.navbar.navbar-expand-md.anim--cascad data-is-scroll=""
 
-      = link_to root_path, class: "navbar-brand", data: {trigger_transition_page: ""} do
+      = link_to root_path, class: "anim-fade navbar-brand", data: {trigger_transition_page: ""} do
         = image_tag "logo.png", class: 'img-fluid'
 
       button.navbar-toggler data-target="#mainHeaderMenu" data-toggle="collapse" type="button"
@@ -16,21 +16,21 @@ header.main-header
           div
 
 
-      ul.nav.navbar-nav.main-header__menu.collapse.navbar-collapse#mainHeaderMenu data-is-main-menu="" data-is-nav=""
+      ul.nav.navbar-nav.main-header__menu.collapse.navbar-collapse.anim-fade#mainHeaderMenu data-is-main-menu="" data-is-nav="" data-is-scroll=""
         //!\\ TODO : Ajouter classe active
-        li.nav-item.nav-item--btn
+        li.nav-item.nav-item--btn.anim-fade
           = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
             span Devenir coach
-        li.nav-item
+        li.nav-item.anim-fade
           = link_to "Connexion", login_path, class: "nav-link", data: {trigger_transition_page: ""}
-        li.nav-item
+        li.nav-item.anim-fade
           = link_to "Annonces", posts_path, class: "nav-link", data: {trigger_transition_page: ""}
-        li.nav-item
+        li.nav-item.anim-fade
           = link_to "Aide", help_path, class: "nav-link", data: {trigger_transition_page: ""}
 
         - if logged_in?
           - if current_user.admin?
-            li.nav-item
+            li.nav-item.anim-fade
               = link_to "Utilisateurs", users_path, class: "nav-link", data: {trigger_transition_page: ""}
 
           li.dropdown
