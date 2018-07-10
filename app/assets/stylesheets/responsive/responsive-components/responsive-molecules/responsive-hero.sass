@@ -1,0 +1,44 @@
+// PROJECT - Responsive Component HERO - Digital Campus 2018
+
+////////////////////
+// LG & <
+////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 778px)
+
+  .hero--fh
+    .hero__content
+      &::after
+        content: none
+      .hero__title
+        align-items: center
+        h1
+          color: $white
+        p
+          display: none
+    .hero__image
+      width: 100%
+    .hero__action--scroll
+      opacity: 0
+      visibility: hidden
+  .btn--halo
+    display: none
+
+  .card--dot
+    margin-bottom: 3rem
+
+
+
+
+
+////////////////////
+// MD & <
+////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 576px)
+
+  .hero--fh
+    .hero__content
+      .hero__title
+        align-items: flex-start
+    .hero__image
+      &::after
+        background-color: rgba($secondary, .5)

@@ -192,7 +192,7 @@ section.section--gray-light.section--gray-light--no-padding
 
 
         ///// SLIDER NAV
-        .slider.slider--nav.anim-fade-up#sliderHomeNav data-is-slider='{"arrows": false, "slidesToShow": 3, "slidesToScroll": 1, "asNavFor": "#sliderHome", "dots": true, "centerMode": true, "focusOnSelect": true}'
+        .slider.slider--nav.anim-fade-up#sliderHomeNav data-is-slider='{"arrows": false, "slidesToShow": 3, "slidesToScroll": 1, "asNavFor": "#sliderHome", "dots": true, "centerMode": true, "focusOnSelect": true, "responsive": [ {"breakpoint": 778, "settings": { "slidesToShow": 1 }}]}'
           .item
             = image_tag 'home/slider-1.jpg', class: 'img-cover'
             .slide__title Paris
