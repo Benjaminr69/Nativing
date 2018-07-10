@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token, :activation_token, :reset_token
-  has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>" }, 
+  has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>" },
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_and_belongs_to_many :spoken_languages
@@ -79,9 +79,9 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  def age
-    ((Time.zone.now - birthdate.to_time) / 1.year.seconds).floor
-  end
+  # def age
+  #   ((Time.zone.now - birthdate.to_i) / 1.year.seconds).floor
+  # end
 
   private
 

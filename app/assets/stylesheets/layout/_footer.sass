@@ -43,24 +43,31 @@ $footer-border-color: rgba($white, .2)
 ///// FOOTER LOGO
 .footer-logo
   font-size: 5rem
-  margin-left: auto
   margin-right: auto
-  text-align: center
   width: 22rem
+  img
+    width: 15rem
 
 
 ///// FOOTER SOCIAL LINKS
 .footer-social__links
+  align-items: center
+  display: flex
+  justify-content: flex-end
   margin-left: -0.3rem
   margin-right: -0.3rem
-
-  a
+  margin-top: 1.5rem
+  a + a
+    margin-left: 1.5rem
+  img
     display: inline-block
     font-size: 3rem
     margin-left: 0.3rem
     margin-right: 0.3rem
     opacity: .5
     vertical-align: middle
+    transition: all $transition-default
+    width: 2.5rem
     &:hover
       opacity: 1
 
@@ -89,6 +96,23 @@ $footer-border-color: rgba($white, .2)
     -ms-flex-preferred-size: auto //-> IE FIX
 
 
+///// FOOTER BOTTOM
+.footer--bottom
+  align-items: center
+  display: flex
+  justify-content: space-between
+  margin-bottom: 0
+  width: 100%
+  &::before,
+  &::after
+    content: none
+  .navbar-collapse
+    padding: 0
+    .navbar-nav
+      padding-left: 0
+      .nav-item:first-child
+        margin-left: 0
+
 ///// FOOTER LEGALS
 .footer-legals
   color: darken($gray-smooth, 10%)
@@ -98,6 +122,8 @@ $footer-border-color: rgba($white, .2)
   a
     color: darken($gray-smooth, 10%)
 
+.footer-time
+  margin-left: 1rem
 
 ///// FOOTER BASICS
 .footer-basics
