@@ -32,6 +32,8 @@ $ ->
 
   new ImageObjectFit()
 
+  new InputSmooth()
+
   new imageLoadList()
 
   new ScrollTo()
