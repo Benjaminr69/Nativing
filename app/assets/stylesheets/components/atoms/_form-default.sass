@@ -1,0 +1,174 @@
+// PROJECT - Component FORM DEFAULT - Studio HB 2017
+
+////////////////////
+// FORM BASE
+////////////////////////////////////////////////////////////////////////////////
+$input-height: 5rem
+
+
+///// FORM INPUT
+.form-control
+  border: none
+  border-bottom: 0.1rem solid $gray-smooth
+  border-radius: 0
+  box-shadow: none
+  font-size: 1.5rem
+  padding: 1rem 0
+  transition: all $transition-default
+  // +placeholder
+  //   color: $gray-smooth
+  //   transition: all $transition-default
+  // Focus
+  &:focus
+    border-color: $gray
+    box-shadow: none // bs override
+    // +placeholder
+    //   color: $gray
+  &:hover
+    cursor: auto
+
+input.form-control
+  height: $input-height
+
+
+///// FORM GROUP
+.form-group
+  margin-bottom: 2rem
+
+
+
+
+
+////////////////////
+// FORM LABEL
+////////////////////////////////////////////////////////////////////////////////
+
+///// FORM LABEL
+.form-label
+  font-weight: 300
+  font-size: 1.5rem
+  margin-bottom: 0.3rem
+
+
+///// FORM LABEL CENTER
+.form-label--center
+  align-items: center
+  display: flex
+  min-height: $input-height
+  margin-bottom: 0
+
+
+///// FORM LABEL TEXTAREA
+.form-label--textarea
+  align-items: flex-start
+  padding-top: 1.2rem
+
+
+
+
+
+////////////////////
+// FORM COMPONENT
+////////////////////////////////////////////////////////////////////////////////
+
+///// FORM SEPARATOR
+.form-separator
+  margin: 2rem 0
+  position: relative
+  text-align: center
+  &::after
+    content: ''
+    background-color: $gray-smooth
+    height: 1px
+    left: 0
+    position: absolute
+    top: 50%
+    transform: translateY(50%)
+    width: 100%
+    -webkit-filter: blur(0px) // Fix blur issue
+
+  span
+    background-color: $white
+    color: $gray-smooth
+    padding: 0 1.5rem
+    position: relative
+    z-index: 1
+
+
+
+
+
+////////////////////
+// FORM INPUT + ICON
+////////////////////////////////////////////////////////////////////////////////
+$icon-input-padding: 5rem
+
+
+.form-icon-wrapper
+  position: relative
+  &:focus
+    #{class-begin('shb-')}
+      color: $gray
+  &.form-icon-wrapper--left
+    .form-control
+      padding-right: 0
+      padding-left: $icon-input-padding
+    #{class-begin('shb-')}
+      left: 0
+      right: auto
+
+  /// Input
+  .form-control
+    padding-right: $icon-input-padding
+    &:focus
+      + #{class-begin('shb-')}
+        color: $gray
+
+  /// Icon
+  #{class-begin('shb-')}
+    align-items: center
+    color: $gray-smooth
+    display: flex
+    font-size: 2.5rem
+    height: 100%
+    justify-content: center
+    position: absolute
+    right: 0
+    top: 0
+    transition: $transition-default
+    width: 5rem
+
+
+
+
+
+////////////////////
+// FORM INPUT TYPE FILE
+////////////////////////////////////////////////////////////////////////////////
+
+///// LABEL WRAPPER
+.custom-file
+  height: 5rem // Height of the input
+  &:hover
+    cursor: pointer
+    .custom-file-control
+      background-color: $primary
+      color: $white
+
+
+///// INPUT
+input.custom-file-input
+  height: 0
+
+
+///// PLACEHOLDER
+.custom-file-control
+  height: auto
+  right: auto
+  top: 50%
+  transform: translateY(-50%)
+
+
+
+
+
