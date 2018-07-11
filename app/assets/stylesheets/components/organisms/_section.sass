@@ -44,3 +44,108 @@ section
     margin-bottom: 4rem
     text-align: left
     text-transform: none
+
+
+
+
+
+////////////////////
+// SECTION PAGE
+////////////////////////////////////////////////////////////////////////////////
+.section--session
+  align-items: center
+  display: flex
+  padding: 0 10vw
+  height: 100vh
+  &::after
+    background-color: $white
+    content: ''
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 30vw
+    z-index: 1
+
+  .section__image
+    height: 100%
+    position: absolute
+    right: 0
+    top: 0
+    transition: all $transition-default 35ms
+    width: 70%
+    &::after
+      background-color: rgba($secondary, .5)
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 0
+
+  .section__content
+    background-color: $white
+    border-top: 0.4rem solid $primary
+    border-radius: 0.4rem
+    box-shadow: 0rem 0.2rem 0.7rem 0rem rgba($black, .2)
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    margin-right auto
+    min-height: 65vh
+    min-width: 350px
+    padding: 4rem
+    position: relative
+    width: 30vw
+    z-index: 2
+
+  .section__description
+    align-items: flex-start
+    color: $white
+    display: flex
+    flex-direction: column
+    margin-left: 10rem
+    margin-top: 30rem
+    position: relative
+    text-align: left
+    z-index: 2
+
+    p
+      max-width: 550px
+      margin-bottom: 0
+      padding-left: 3rem
+      position: relative
+      &::before
+        background-color: $primary
+        content: ''
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 0.4rem
+
+
+  h1
+    margin-bottom: 0
+    margin-top: 0
+
+  h2
+    color: $white
+
+  .remember-me
+    font-size: 1.2rem
+    margin: 0 0 3rem
+
+  .forget
+    color: rgba($gray-dark, .5)
+    margin-top: -3rem
+    margin-bottom: 2rem
+    display: block
+    font-size: 1.2rem
+    &:hover
+      color: $primary
+
+  .new-account
+    margin-top: 2rem
+

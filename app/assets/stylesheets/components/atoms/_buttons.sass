@@ -99,6 +99,25 @@ a.btn-primary:focus
   color: $white
 
 
+
+///// BUTTON PRIMARY
+.btn-secondary
+  background-color: $gray-light
+  color: $gray
+  &:hover,
+  &:focus,
+  &:active,
+  &:not(:disabled):not(.disabled):active
+    background-color: $gray-light !important
+    color: $gray
+  &::before
+    background-color: rgba($gray-smooth, .4)
+
+a.btn-primary:hover,
+a.btn-primary:focus
+  color: $white
+
+
 ///// BTN OUTLINE
 .btn-outline
   border: 0.1rem solid $primary
