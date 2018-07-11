@@ -1,0 +1,152 @@
+// PROJECT - Component FORM SMOOTH - Studio HB 2017
+
+////////////////////
+// FORM INPUT SMOOTH
+////////////////////////////////////////////////////////////////////////////////
+
+$input-smooth-height: 3rem
+$input-smooth-gutter: 0.1rem
+$input-smooth-padding-y: 0.5rem
+$input-smooth-line-height: 1.25
+
+$label-smooth-focus-font-size: 1.2rem
+
+
+
+// INPUT SMOOTH WRAPPER
+// ---------------------------------------------------------
+.form-group--smooth
+  margin-top: 3.2rem
+  margin-bottom: 3.2rem
+  position: relative
+  width: 100%
+  &:hover
+    cursor: text
+
+
+
+// INPUT SMOOTH
+// ---------------------------------------------------------
+.input--smooth
+  background-color: transparent
+  border-width: 0 0 0.1rem 0
+  border-style: solid
+  border-color: $gray-smooth
+  border-radius: 0
+  font-size: $text-font-size
+  line-height: $input-smooth-line-height
+  margin: 0
+  min-height: $input-smooth-height
+  padding: $input-smooth-padding-y 0
+  position: relative //-> for z-index
+  transition: all $transition-default
+  width: 100%
+  z-index: 2
+  &:focus
+    border-color: transparent
+    background-color: transparent
+    outline: none
+
+input.input--smooth
+  height: $input-smooth-height
+
+
+
+// INPUT SMOOTH LABEL
+// ---------------------------------------------------------
+.label--smooth
+  bottom: 0
+  color: $gray
+  font-size: 1.6rem
+  font-weight: 500
+  left: 0
+  line-height: $input-smooth-line-height
+  margin-bottom: 0
+  padding-bottom: 1rem
+  position: absolute
+  transition: all $transition-default
+  width: 100%
+  z-index: 1
+  &::before // put on before pseudo-elt because after is already used for required fields
+    background-color: $primary
+    bottom: 0
+    content: ''
+    height: 1px
+    left: 0
+    position: absolute
+    transition: width $transition-default
+    width: 0%
+  &:hover
+    cursor: text
+
+
+// INPUT ANIMATION
+// ---------------------------------------------------------
+
+///// LABEL ANIMATED
+.input--smooth:focus,
+.input--filled
+
+  + .label--smooth
+    color: $primary
+    font-size: $label-smooth-focus-font-size
+    padding-bottom: calc(#{$input-smooth-gutter} + #{$input-smooth-height} + 0.5rem)
+    text-transform: uppercase
+    &::before
+      width: 100%
+
+
+///// INPUT FILLED
+.input--filled
+  border-bottom-color: transparent
+  outline: none
+
+
+
+
+
+////////////////////
+// FORM TEXTAREA SMOOTH
+////////////////////////////////////////////////////////////////////////////////
+$textarea-smooth-padding: 1rem
+
+
+
+// TEXTAREA SMOOTH WRAPPER
+// ---------------------------------------------------------
+.form-group--smooth-textarea
+  margin-top: 4rem
+
+
+
+// TEXTAREA SMOOTH
+// ---------------------------------------------------------
+textarea.input--smooth
+  border-width: 0.1rem
+  padding: $textarea-smooth-padding
+
+
+
+// TEXTAREA SMOOTH LABEL
+// ---------------------------------------------------------
+textarea
+  + .label--smooth
+    bottom: auto
+    left: $textarea-smooth-padding
+    top: $textarea-smooth-padding
+    width: calc(100% - #{$textarea-smooth-padding})
+    &::before
+      content: none
+
+
+
+// TEXTAREA SMOOTH ANIMATION
+// ---------------------------------------------------------
+textarea.input--smooth:focus,
+textarea.input--filled
+  border-color: $primary
+
+  + .label--smooth
+    left: 0
+    top: - $textarea-smooth-padding - $label-smooth-focus-font-size
+    width: 100%
