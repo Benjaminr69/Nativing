@@ -6,8 +6,18 @@
 
 // HEADER DEFAULT
 // ---------------------------------------------------------
+.page-home,
+.page-session
+  .main-header
+    background-color: transparent
+
+    .nav-link,
+    .dropdown-toggle
+      color: $white
+
+
 header.main-header
-  background-color: transparent
+  background-color: $white
   height: $header-height
   left: 0
   position: absolute
@@ -65,8 +75,9 @@ header.main-header
 
 
   ///// NAV LINK
-  .nav-link
-    color: $white
+  .nav-link,
+  .dropdown-toggle
+    color: $gray-dark
     font-size: 1.5rem
     font-weight: 600
     transition: all $transition-default
