@@ -1,0 +1,25 @@
+section.section--session
+
+
+  .section__image
+    = image_tag 'home/slider-1.jpg', class: 'img-cover'
+
+
+  .section__content.anim-fade-up data-is-scroll=""
+
+    = form_for(:password_reset, url: password_resets_path) do |f|
+
+      h1.text-left Mot de passe oublié
+
+      .form-group.form-group--smooth
+        = f.email_field :email, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label :email, class: 'label--smooth'
+
+      = f.submit "Envoyer", class: "btn btn-primary"
+
+    = link_to login_path, class: 'btn btn-block btn-secondary new-account', data: {trigger_transition_page: ""} do
+      span Se connecter
+
+  .section__description.anim-fade-up data-is-scroll=""
+    h2 Stuck business Model
+    p Stuck has created a unique model of conducting business. We would refer to this unique business Growth model as the "Stuck Business Model".
