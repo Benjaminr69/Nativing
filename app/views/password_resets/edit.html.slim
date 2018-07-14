@@ -1,0 +1,32 @@
+section.section--session
+
+
+  .section__image
+    = image_tag 'home/slider-4.jpg', class: 'img-cover'
+
+
+  .section__content.anim-fade-up data-is-scroll=""
+
+    = form_for(@user, url: password_reset_path(params[:id])) do |f|
+
+      h1.text-left Réinitialiser le mot de passe
+
+      = hidden_field_tag :email, @user.email
+
+      .form-group.form-group--smooth
+        = f.password_field :password, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label :Mot_de_passe, class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.password_field :password_confirmation, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label :Confirmation_mot_de_passe, "Confirmation", class: 'label--smooth'
+
+      = f.submit "Réinitialiser", class: "btn btn-primary"
+
+    = link_to login_path, class: 'btn btn-block btn-secondary new-account', data: {trigger_transition_page: ""} do
+      span Se connecter
+
+
+  .section__description.anim-fade-up data-is-scroll=""
+    h2 Stuck business Model
+    p Stuck has created a unique model of conducting business. We would refer to this unique business Growth model as the "Stuck Business Model".
