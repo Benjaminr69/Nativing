@@ -29,7 +29,7 @@
           span.user__info__title> Langue maternelle :
           span> = @user.mother_tongue
         p.anim-fade-up
-          span.user__info__title> Autre langue parlées :
+          span.user__info__title> Autres langues parlées :
           span> = @user.spoken_languages.map(&:name).sort.join(", ")
         = link_to edit_user_path(current_user), class: 'btn btn-primary' do
           span Editer le profil

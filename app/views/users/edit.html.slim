@@ -1,0 +1,129 @@
+////////////////////
+// TABS PARAMETRE
+////////////////////////////////////////////////////////////////////////////////
+.tabs-wrapper#tabs.anim--cascad data-is-scroll=""
+
+
+  ul.tabs__nav.anim-fade-up
+    li
+      = link_to "Paramètres voyageur", "#tabs-1", class: 'link-white-primary'
+    li
+      = link_to "Paramètres coach", "#tabs-2", class: 'link-white-primary'
+    li
+      = link_to "Disponibilités", "#tabs-3", class: 'link-white-primary'
+
+
+  .tabs__content.anim-fade-up#tabs-1
+
+    h1 Paramètres voyageur
+
+    = form_for (@user), :html => { :multipart => true } do |f|
+
+      = f.label :photo, "Photo :"
+      = f.file_field :photo, class: 'form-control'
+
+      .form-group.form-group--smooth
+        = f.text_field :fname, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :fname , "Prénom :", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :lname, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :lname, "Nom :", class: 'label--smooth'
+
+      = f.label :birthdate, "Date de naissance :"
+      = f.date_select :birthdate, class: 'form-control', data: { is_input_smooth: ''}
+
+      .form-group.form-group--smooth
+        = f.text_field :mother_tongue, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :mother_tongue, "Langue maternelle :", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :spoken_language_ids, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :spoken_language_ids, "Autres langues parlées :", class: 'label--smooth'
+
+      / = f.label :spoken_language_ids, "Autres langues parlées :"
+      / = f.collection_check_boxes :spoken_language_ids, SpokenLanguage.all, :id, :name do |b|
+      /   .collection-check-box
+      /     = b.check_box
+      /     = b.label
+
+      .form-group.form-group--smooth
+        = f.email_field :email, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :email, "Email :", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.password_field :password, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :password, "Mot de passe :", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.password_field :password_confirmation, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :password_confirmation, "Confirmation", class: 'label--smooth'
+
+      = f.submit "Enregistrer les changements", class: "btn btn-primary"
+
+
+  .tabs__content.anim-fade-up#tabs-2
+
+    h1 Paramètres coach
+
+    = form_for (@user), :html => { :multipart => true } do |f|
+
+      .form-group.form-group--smooth
+        = f.phone_field :phone, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label :phone, "Téléphone :", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :address, id: :autocomplete_address, class: 'form-control', data: { is_input_smooth: ''}
+
+      .form-group.form-group--smooth
+        = f.number_field :street_number, id: :street_number, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'N° de voie', class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :route, id: :route, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'Nom de la voie', class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :locality, id: :locality, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'Ville', class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :administrative_area_level_1, id: :administrative_area_level_1, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'Région', class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.text_field :country, id: :country, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'Pays', class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.number_field :postal_code, id: :postal_code, class: 'form-control', data: { is_input_smooth: ''}
+        = f.label 'Code postal', class: 'label--smooth'
+
+      = f.submit "Enregistrer les changements", class: "btn btn-primary"
+
+
+  .tabs__content.anim-fade-up#tabs-3
+
+    h1 Disponiblités
+
+    = month_calendar events: @availabilities do |date, availabilities|
+      = date.day
+
+    / availabilities.each do |availability|
+
+    /   = availability.name
+    /   = link_to "Editer", edit_availability_path(availability)
+
+    div.btn-wrapper
+      span
+        = link_to availabilities_path, class: 'btn btn-primary btn-outline' do
+          span Voir toutes les disponibilités
+      span
+        = link_to new_availability_path, class: 'btn btn-primary' do
+          span Ajouter une disponibilité
+
+
+javascript:
+  $(document).ready(function() {
+      $("#tabs").tabs();
+  });

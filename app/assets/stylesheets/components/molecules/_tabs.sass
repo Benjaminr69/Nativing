@@ -4,7 +4,6 @@
 // TABS DEFAULT
 ////////////////////////////////////////////////////////////////////////////////
 .tabs-wrapper
-  align-items: flex-start
   background-color: $white
   color: $gray-dark
   display: flex
@@ -25,7 +24,7 @@
   ///// TABS NAV
   .tabs__nav
     background-color: $gray-dark
-    height: calc(100vh - 7rem)
+    height: auto
     min-width: 30rem
     margin-bottom: 0
     position: relative
@@ -36,6 +35,8 @@
 
     li
       list-style: none
+      &:focus
+        outline: none
 
       + li
         border-top: 0.1rem solid rgba($white, .5)
