@@ -13,12 +13,24 @@
 ////////////////////
 // THUMB PROFILE
 ////////////////////////////////////////////////////////////////////////////////
+.thumb-profile-wrapper--mobile
+  height: auto
+  display: none
+  .thumb--profile
+    margin: 0 1rem
+    padding: 2.2rem
+    text-align: center
+    .thumb__image
+      height: 9rem
+      margin-bottom: 1.5rem
+      width: 9rem
+
 .thumb--profile
   align-items: center
   background-color: $white
   border-radius: 1rem
   box-shadow: 0rem 0.2rem 0.7rem 0rem rgba($black, .2)
-  display: flex
+  display: flex !important
   justify-content: center
   flex-direction: column
   padding: 3rem
@@ -26,6 +38,7 @@
 
   .thumb__image
     border-radius: 50%
+    display: inline-block
     height: 11rem
     margin-bottom: 2.5rem
     overflow: hidden

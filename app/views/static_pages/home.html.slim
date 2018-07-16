@@ -231,7 +231,7 @@ section.section--gray-light
 
     // THUMBS
     // ---------------------------------------------------------
-    .row.anim-fade.anim--cascad data-is-scroll=""
+    .row.anim-fade.anim--cascad.thumb-profile-wrapper data-is-scroll=""
 
 
       ///// THUMB 1
@@ -303,6 +303,65 @@ section.section--gray-light
           = link_to "#", class: 'thumb__favorite' do
             i.material-icons favorite
 
+
+    ///// THUMB MOBILE
+    .thumb-profile-wrapper--mobile.slider.slider--nav.anim-fade-up#sliderHomeNav data-is-scroll="" data-is-slider='{"arrows": false, "slidesToShow": 1, "slidesToScroll": 1, "asNavFor": "#sliderHome", "dots": true, "centerMode": true, "focusOnSelect": true}'
+
+      .thumb.thumb--profile
+        = link_to "#", class: 'thumb__image' do
+          = image_tag 'avatar.jpg', class: 'img-cover'
+        = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+        .thumb__speciality Francais
+        .thumb__location
+          span
+            = image_tag 'icons/placeholder.svg'
+          span 69004 Lyon
+        = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+          span En savoir plus
+        = link_to "#", class: 'thumb__favorite' do
+          i.material-icons favorite
+
+      .thumb.thumb--profile
+        = link_to "#", class: 'thumb__image' do
+          = image_tag 'avatar.jpg', class: 'img-cover'
+        = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+        .thumb__speciality Francais
+        .thumb__location
+          span
+            = image_tag 'icons/placeholder.svg'
+          span 69004 Lyon
+        = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+          span En savoir plus
+        = link_to "#", class: 'thumb__favorite' do
+          i.material-icons favorite
+
+      .thumb.thumb--profile
+        = link_to "#", class: 'thumb__image' do
+          = image_tag 'avatar.jpg', class: 'img-cover'
+        = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+        .thumb__speciality Francais
+        .thumb__location
+          span
+            = image_tag 'icons/placeholder.svg'
+          span 69004 Lyon
+        = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+          span En savoir plus
+        = link_to "#", class: 'thumb__favorite' do
+          i.material-icons favorite
+
+      .thumb.thumb--profile
+        = link_to "#", class: 'thumb__image' do
+          = image_tag 'avatar.jpg', class: 'img-cover'
+        = link_to "Elisa Lucet", "#", class: 'thumb__title link-gray-primary'
+        .thumb__speciality Francais
+        .thumb__location
+          span
+            = image_tag 'icons/placeholder.svg'
+          span 69004 Lyon
+        = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+          span En savoir plus
+        = link_to "#", class: 'thumb__favorite' do
+          i.material-icons favorite
 
     .row.anim-fade
       .col-lg-12.text-center.m-t-50
