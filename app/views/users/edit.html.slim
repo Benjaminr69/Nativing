@@ -116,10 +116,10 @@
 
     div.btn-wrapper
       span
-        = link_to availabilities_path, class: 'btn btn-primary btn-outline' do
+        = link_to availabilities_path, class: 'btn btn-primary btn-outline', data: {trigger_transition_page: ""} do
           span Voir toutes les disponibilités
       span
-        = link_to new_availability_path, class: 'btn btn-primary' do
+        = link_to new_availability_path, class: 'btn btn-primary', data: {trigger_transition_page: ""} do
           span Ajouter une disponibilité
 
 

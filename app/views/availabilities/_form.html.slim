@@ -1,0 +1,23 @@
+= form_with(model: availability, local: true) do |form|
+  / - if availability.errors.any?
+  /   div#error_explanation
+  /     h2 = pluralize(availability.errors.count, "error") Cette disponibilité ne peut etre sauvegardé
+
+  /     ul
+  /       availability.errors.full_messages.each do |message|
+  /         li = message
+
+
+  .form-group.form-group--smooth
+    = form.text_field :name, id: :availability_name, class: 'form-control', data: { is_input_smooth: ''}
+    = form.label "Nom de la disponiblité", class: 'label--smooth'
+
+  = form.label :start_time
+  = form.datetime_select :start_time, id: :availability_start_time
+
+  = form.label :end_time
+  = form.datetime_select :end_time, id: :availability_end_time
+
+  = form.hidden_field :user_id, :value => current_user.id
+
+  = form.submit "Enregistrer", class: "btn btn-primary"
