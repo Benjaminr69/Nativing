@@ -3,8 +3,132 @@
 ////////////////////
 // LG & <
 ////////////////////////////////////////////////////////////////////////////////
-@media (max-width: 576px)
+@media (max-width: 778px)
 
   header.main-header
 
     display: none
+
+    &.main-header--mobile
+      display: block
+
+      .navbar
+        justify-content: space-between
+        &::before,
+        &::after
+          content: none
+
+      .navbar-brand
+        padding-left: 3.8rem
+
+      .navbar-toggler
+        cursor: pointer
+        height: 2.4rem
+        margin-top: 0
+        padding: 0
+        position: absolute
+        right: 3.8rem
+        top: 2rem
+        width: 3.4rem
+        z-index: 1005
+        &:focus
+          outline: none
+
+        &[aria-expanded="true"]
+          color: $white
+          position: fixed
+          transform: none
+          z-index: 1005
+
+          .toggler-icon
+            div:nth-child(1),
+            div:nth-child(4)
+              left: 50%
+              opacity: 0
+              top: 0.9rem
+              width: 0rem
+            div:nth-child(2)
+              transform: rotate(-45deg)
+            div:nth-child(3)
+              transform: rotate(45deg)
+
+      .toggler-icon
+        display: block
+        height: 2.1rem
+
+        div
+          border-radius: 0.3rem
+          background-color: $white
+          height: 0.3rem
+          left: 0%
+          position: absolute
+          transition: all $transition-default
+          width: 3.2rem
+          // 1 child
+          &:nth-child(1)
+            top: 0rem
+          // 2 / 3 child
+          &:nth-child(2),
+          &:nth-child(3)
+            top: 0.9rem
+          // 4 child
+          &:nth-child(4)
+            top: 1.8rem
+
+      .dropdown--header
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
+        &.open
+          .dropdown-menu--header
+            visibility: visible
+            opacity: 1
+
+      .dropdown-menu--header
+        display: block
+        border-radius: 0 !important
+        border: none
+        background-color: rgba($primary, .9)
+        height: 100vh
+        left: 0
+        margin-top: 0
+        opacity: 0
+        padding-left: 5rem
+        position: fixed
+        top: 0
+        transform: none
+        transition: all $transition-default
+        visibility: hidden
+        width: 100%
+
+        .navbar-brand
+          left: 0
+          position: absolute
+          top: 1rem
+
+        .navbar-nav
+          align-items: flex-start
+          flex-direction: column
+          justify-content: center
+          margin: 0
+          padding-top: 3.5rem
+
+          ul
+            padding-left: 2rem
+
+          .nav-item
+            list-style: none
+
+          .nav-link
+            color: $white
+            font-size: 1.6rem
+            padding: 1.5rem 0
+
+          .nav-title
+            color: $white
+            font-size: 1.6rem
+            opacity: 0.7
+            cursor: text
+            padding-top: 2rem

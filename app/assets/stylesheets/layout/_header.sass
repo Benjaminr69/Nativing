@@ -17,6 +17,10 @@
 
 
 header.main-header
+
+  &.main-header--mobile
+    display: none
+
   background-color: $white
   height: $header-height
   left: 0
@@ -31,14 +35,10 @@ header.main-header
 
   ///// NAVBAR BRAND
   .navbar-brand
+    position: relative
     width: 16rem
     img
       width: 100%
-
-
-  ///// NAVBAR TOGGLER
-  .navbar-toggler
-    display: none
 
 
   ///// NAVBAR
@@ -85,3 +85,21 @@ header.main-header
     &:focus
       opacity: 1 !important
       background-color: transparent
+
+  .dropdown-menu
+    left: 50%
+    padding: 2rem 3rem
+    transform: translateX(-50%)
+    .nav-item
+      margin: 0
+    .nav-link
+      color: $gray-dark
+      padding: 1rem 0
+
+  .nav .open > a
+    background-color: transparent
+
+  .navbar-nav > li > .dropdown-menu
+    border-top-right-radius: 0.4rem
+    border-top-left-radius: 0.4rem
+
