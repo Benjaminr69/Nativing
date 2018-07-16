@@ -40,7 +40,7 @@ header.main-header
               li.nav-item
                 = link_to "Profil", current_user, class: "nav-link", data: {trigger_transition_page: ""}
               li.nav-item
-                = link_to "Paramètres", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
+                = link_to "Mon compte", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
 
               - if current_user.coach?
                 li.nav-item
@@ -113,7 +113,7 @@ header.main-header.main-header--mobile.dropdown
                 li.nav-item
                   = link_to "Profil", current_user, class: "nav-link", data: {trigger_transition_page: ""}
                 li.nav-item
-                  = link_to "Paramètres", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
+                  = link_to "Mon compte", edit_user_path(current_user), class:"nav-link", data: {trigger_transition_page: ""}
 
                 - if current_user.coach?
                   li.nav-item
