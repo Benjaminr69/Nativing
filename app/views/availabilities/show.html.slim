@@ -1,0 +1,31 @@
+.tabs-wrapper.anim--cascad data-is-scroll=""
+
+
+  .tabs__nav.anim-fade-up
+    = link_to edit_user_path(current_user), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span Retour au profil
+
+
+  .tabs__content.anim-fade-up
+
+    h1 Ma disponibilité
+
+    p#notice = notice
+
+    aside
+      section.user_info
+
+        p
+          span.user__info__title> Nom :
+          span> = @availability.name
+
+        p
+          span.user__info__title> Début :
+          span> = @availability.start_time
+
+        p
+          span.user__info__title> Fin :
+          span> = @availability.end_time
+
+        = link_to edit_availability_path(@availability), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+          span Editer la disponiblité

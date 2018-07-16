@@ -1,0 +1,13 @@
+.tabs-wrapper.anim--cascad data-is-scroll=""
+
+
+  .tabs__nav.anim-fade-up
+    = link_to edit_user_path(current_user), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span Retour au profil
+
+
+  .tabs__content.anim-fade-up
+
+    h1 Editer une disponiblité
+
+    = render 'form', availability: @availability

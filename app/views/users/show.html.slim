@@ -31,7 +31,7 @@
         p.anim-fade-up
           span.user__info__title> Autres langues parlées :
           span> = @user.spoken_languages.map(&:name).sort.join(", ")
-        = link_to edit_user_path(current_user), class: 'btn btn-primary' do
+        = link_to edit_user_path(current_user), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
           span Editer le profil
 
 
@@ -59,7 +59,7 @@
           span> = @user.locality
         p
           span> = @user.country
-        = link_to edit_user_path(current_user), class: 'btn btn-primary' do
+        = link_to edit_user_path(current_user), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
           span Editer le profil
 
 

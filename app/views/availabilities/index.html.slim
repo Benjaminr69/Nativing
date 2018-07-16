@@ -1,0 +1,40 @@
+.tabs-wrapper.anim--cascad data-is-scroll=""
+
+
+  .tabs__nav.anim-fade-up
+    = link_to edit_user_path(current_user), class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span Retour au profil
+
+
+  .tabs__content.anim-fade-up
+
+    h1 Mes disponibilités
+
+    br
+
+    p#notice = notice
+
+    table
+      thead
+        tr
+          th colspan="3" Nom
+          th colspan="3" Début
+          th colspan="3" Fin
+
+      tbody
+        - @availabilities.each do |availability|
+          tr
+            td colspan="2" = availability.name
+            td
+            td colspan="2" = availability.start_time
+            td
+            td colspan="2" = availability.end_time
+            td
+            / td = link_to 'Show', availability
+            td = link_to 'Edit', edit_availability_path(availability), data: {trigger_transition_page: ""}
+            td = link_to 'Destroy', availability, method: :delete, data: { confirm: 'Are you sure?',  trigger_transition_page: ""}
+
+    br
+
+    = link_to new_availability_path, class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span Nouvelle disponibilité
