@@ -1,0 +1,137 @@
+////////////////////
+// TABS PROFIL
+////////////////////////////////////////////////////////////////////////////////
+.tabs-wrapper#tabs.anim--cascad data-is-scroll=""
+
+
+  ul.tabs__nav.anim-fade-up
+    li
+      = link_to "Profil voyageur", "#tabs-1", class: 'link-white-primary'
+    li
+      = link_to "Profil coach", "#tabs-2", class: 'link-white-primary'
+
+
+  .tabs__content.anim-fade-up#tabs-1
+    h1 Profil voyageur
+    aside
+      section.user_info.anim--cascad data-is-scroll=""
+        .tabs__picture.anim-fade-up
+          = image_tag(@user.photo.url(:thumb))
+          h3
+            span> = @user.fname
+            span> = @user.lname
+            - if @user.coach
+              div.speciality> Coach
+        p.anim-fade-up
+          span.user__info__title> Adresse email :
+          span> = @user.email
+        p.anim-fade-up
+          span.user__info__title> Langue maternelle :
+          span> = @user.mother_tongue
+        p.anim-fade-up
+          span.user__info__title> Autre langue parlées :
+          span> = @user.spoken_languages.map(&:name).sort.join(", ")
+        = link_to edit_user_path(current_user), class: 'btn btn-primary' do
+          span Editer le profil
+
+
+  .tabs__content.anim-fade-up#tabs-2
+    h1 Profil coach
+    aside
+      section.user_info
+        .tabs__picture.anim-fade-up
+          = image_tag(@user.photo.url(:thumb))
+          h3
+            span> = @user.fname
+            span> = @user.lname
+            - if @user.coach
+              div.speciality> Coach
+        p
+          span.user__info__title> Numéro de téléphone :
+          span> = @user.phone
+        p
+          span.user__info__title> Adresse :
+        p
+          span> = @user.street_number
+          span> = @user.route
+        p
+          span> = @user.postal_code
+          span> = @user.locality
+        p
+          span> = @user.country
+        = link_to edit_user_path(current_user), class: 'btn btn-primary' do
+          span Editer le profil
+
+
+
+
+
+
+////////////////////
+// CARD RASSURANCE
+////////////////////////////////////////////////////////////////////////////////
+section.section--primary#scroll
+  .container.anim--cascad data-is-scroll=""
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2.anim-fade
+      div Nativing pour voyager l'esprit
+      span> léger, en toute
+      span.font--bold sécurité.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
+    .row.anim-fade.anim--cascad data-is-scroll=""
+
+
+      ///// CARD 1
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/trophy-primary.svg'
+            h3 Certification
+          .card__content
+            p
+              span> Voyagez en toute sécurité, grâce à des coachs
+              span.font--bold sélectionnés et certifiés par Nativing.
+
+
+      ///// CARD 2
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/money-primary.svg'
+            h3 Paiement
+          .card__content
+            p
+              span> Le site web de Nativing dispose d’une fonctionnalité de paiement sécurisé
+              span.font--bold pour voyager en toute tranquillité
+
+
+      ///// CARD 3
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/placeholder.svg'
+            h3 Adresse
+          .card__content
+            p
+              span> Pour toute question ou demande, n’hésitez pas à
+              span.font--bold contacter Nativing ou à vous déplacer directement chez nous.
+
+
+
+
+
+javascript:
+  $(document).ready(function() {
+      $("#tabs").tabs();
+  });

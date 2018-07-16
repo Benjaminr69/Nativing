@@ -10,6 +10,7 @@
 .page-session
   .main-header
     background-color: transparent
+    box-shadow: none
 
     .nav-link,
     .dropdown-toggle
@@ -17,10 +18,7 @@
 
 
 header.main-header
-
-  &.main-header--mobile
-    display: none
-
+  box-shadow: 0rem 0.2rem 0.7rem 0rem rgba($black, .2)
   background-color: $white
   height: $header-height
   left: 0
@@ -28,6 +26,9 @@ header.main-header
   top: 0
   width: 100%
   z-index: 25
+
+  &.main-header--mobile
+    display: none
 
   .container
     height: 100%
@@ -90,6 +91,7 @@ header.main-header
     left: 50%
     padding: 2rem 3rem
     transform: translateX(-50%)
+    top: calc(100% + 2rem)
     .nav-item
       margin: 0
     .nav-link

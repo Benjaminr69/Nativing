@@ -1,0 +1,80 @@
+// NATIVING - Component Molecules tabs.sass - Digital Campus 2018
+
+////////////////////
+// TABS DEFAULT
+////////////////////////////////////////////////////////////////////////////////
+.tabs-wrapper
+  align-items: flex-start
+  background-color: $white
+  color: $gray-dark
+  display: flex
+  min-height: 100vh
+  padding-top: 7rem
+
+  h1
+    margin-top: 0
+    text-align: left
+    padding-top: 2rem
+
+  .row
+    &::before,
+    &::after
+      content: none
+
+
+  ///// TABS NAV
+  .tabs__nav
+    background-color: $gray-dark
+    height: calc(100vh - 7rem)
+    min-width: 30rem
+    margin-bottom: 0
+    position: relative
+    padding: 4rem
+
+    ul
+      padding-left: 0
+
+    li
+      list-style: none
+
+      + li
+        border-top: 0.1rem solid rgba($white, .5)
+
+      a
+        display: inline-block
+        font-size: 2rem
+        padding: 2rem 0
+
+
+  ///// TABS CONTENT
+  .tabs__content
+    flex-grow: 1
+    padding: 4rem
+
+    aside
+      span
+        display: inline-block
+
+    .user_info
+      margin-top: 5rem
+
+    .tabs__picture
+      align-items: center
+      margin-bottom: 2rem
+      display: flex
+
+      h3
+        margin-left: 2rem
+
+      .speciality
+        color: $primary
+        text-transform: none
+
+    p
+      .user__info__title
+        font-style: italic
+        opacity: 0.7
+
+    .btn
+      margin-top: 1rem
+
