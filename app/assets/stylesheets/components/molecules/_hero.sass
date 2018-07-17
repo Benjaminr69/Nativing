@@ -199,3 +199,49 @@
         transition: all $transition-default
         top: 0.7rem
         width: 0.5rem
+
+
+
+
+
+////////////////////
+// HERO SMALL
+////////////////////////////////////////////////////////////////////////////////
+.hero--sm
+  align-items: center
+  display: flex
+  height: 35rem
+  overflow: hidden
+  width: 100%
+
+  ///// HERO IMAGE
+  .hero__image
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    transition: all $transition-default 35ms
+    width: 100%
+    &::after
+      background-color: rgba($secondary, .3)
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 5
+
+  ///// HERO CONTENT
+  .hero__content
+    position: relative
+    width: 100%
+    z-index: 10
+
+    h1
+      color: $white
+      text-align: center
+
+    p
+      color: $white
+      text-align: center
