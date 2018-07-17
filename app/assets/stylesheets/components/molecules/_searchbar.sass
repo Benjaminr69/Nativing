@@ -8,23 +8,42 @@
   background-color: $white
   border-radius: 10rem
   display: flex
-  padding: 1rem 1rem 1rem 2rem
+  max-width: 75rem
+  margin: 0 auto
+  padding: 1rem
 
   .form-group,
   .form-group--smooth
     margin-top: 0
     margin-bottom: 0
 
+  .form-group
+    + .form-group
+      border-left: 0.1rem solid $gray-light
+
   .form-control
     margin-bottom: 0
+    padding: 1rem !important
 
   .input-smooth
     border-bottom: none
 
-  // .input-smooth--first
-  //   border-top-left-radius: 10rem
-  //   border-bottom-left-radius: 10rem
+
+    &.input--filled
+      background-color: rgba($black, .1)
+      + .label--smooth
+        font-size: 0.9rem
+        padding-bottom: 3.4rem
+
+
+  .input-smooth--first
+    border-top-left-radius: 10rem
+    border-bottom-left-radius: 10rem
+
+  .input-smooth--last
+    margin-right: 1rem
 
   .label--smooth
+    left: 1rem
     &::before
       content: none

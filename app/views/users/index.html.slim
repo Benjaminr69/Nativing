@@ -22,7 +22,7 @@ section.section--user
 
           p.anim-fade-up Nos hôtes Nativing vous accueillent chez eux, partout en France.
 
-          = form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit', class: 'searchbar'} do |f|
+          = form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit', class: 'searchbar anim-fade-up'} do |f|
 
             .form-group.form-group--smooth
               = f.text_field :with_mother_tongue, class: 'mother_tongue filterrific-periodically-observed form-control input-smooth--first input-smooth', data: { is_input_smooth: ''}
@@ -32,18 +32,121 @@ section.section--user
               = f.text_field :with_locality, class: 'locality filterrific-periodically-observed form-control input-smooth', data: { is_input_smooth: ''}
               = f.label "Ville", class: 'label--smooth'
 
-            .form-group.form-group--smooth
+            .form-group.form-group--smooth.input-smooth--last
               = f.text_field :with_start_time_gte, 'data-provide' => 'datepicker', class: 'form-control input-smooth', data: { is_input_smooth: ''}
               = f.label "Date", class: 'label--smooth'
 
             = f.submit 'Rechercher', class: 'btn btn-primary'
 
-  div
-    = link_to 'Reset filters', reset_filterrific_url
 
-    = render_filterrific_spinner
 
-    = render partial: 'users/list', locals: { users: @users }
+
+
+  ////////////////////
+  // RASSURANCE
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--cards
+    .container
+      .row.anim--cascad data-is-scroll=""
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/trophy-primary.svg'
+              h4 Confiance
+            .card__content
+              span> Voyagez partout en France et progressez en langue en toute sécurité, grâce à nos hôtes
+              span.font--bold sélectionnés et certifiés par Nativing.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/money-primary.svg'
+              h4 Prix
+            .card__content
+              span> Nativing vous permet de voyager à prix réduit, en séjournant chez des hôtes natifs.
+              span.font--bold en séjournant chez des hôtes natifs.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/placeholder.svg'
+              h4 Localisation
+            .card__content
+              span> Nativing vous offre la possibilité d’apprendre une langue dans le monde entier.
+              span.font--bold d’apprendre une langue et de voyager dans le monde entier.
+
+
+
+
+
+  ////////////////////
+  // LISTE USERS
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--users
+    .container
+      / = link_to 'Reset filters', reset_filterrific_url
+
+      = render_filterrific_spinner
+
+      = render partial: 'users/list', locals: { users: @users }
+
+////////////////////
+// CARD RASSURANCE
+////////////////////////////////////////////////////////////////////////////////
+section.section--primary#scroll
+  .container.anim--cascad data-is-scroll=""
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2.anim-fade
+      div Nativing pour voyager l'esprit
+      span> léger, en toute
+      span.font--bold sécurité.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
+    .row.anim-fade.anim--cascad data-is-scroll=""
+
+
+      ///// CARD 1
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/trophy-primary.svg'
+            h3 Certification
+          .card__content
+            p
+              span> Voyagez en toute sécurité, grâce à des coachs
+              span.font--bold sélectionnés et certifiés par Nativing.
+
+
+      ///// CARD 2
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/money-primary.svg'
+            h3 Paiement
+          .card__content
+            p
+              span> Le site web de Nativing dispose d’une fonctionnalité de paiement sécurisé
+              span.font--bold pour voyager en toute tranquillité
+
+
+      ///// CARD 3
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/placeholder.svg'
+            h3 Adresse
+          .card__content
+            p
+              span> Pour toute question ou demande, n’hésitez pas à
+              span.font--bold contacter Nativing ou à vous déplacer directement chez nous.
 
 
 javascript:

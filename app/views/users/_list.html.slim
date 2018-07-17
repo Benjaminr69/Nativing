@@ -1,0 +1,30 @@
+div#filterrific_results
+
+  / <!-- <div>
+  /   <%= page_entries_info users %>
+  / </div> -->
+
+  .row.anim--cascad data-is-scroll=""
+    - @users.each do |user|
+    	- if user.coach?
+          .col-sm-4.anim-fade-up
+            .thumb.thumb--profile
+              = link_to "", class: 'thumb__image' do
+                = image_tag "missing.png", class: 'img-cover'
+              = link_to "", class: 'thumb__title link-gray-primary' do
+                span> = user.fname
+                span> = user.lname
+              .thumb__speciality = user.mother_tongue
+              .thumb__location
+                span>
+                  = image_tag 'icons/placeholder.svg'
+                span> = user.postal_code
+                span> = user.locality
+
+              = link_to "http://localhost:3000/posts/13", class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+                span Voir le profil
+              = link_to "", class: 'thumb__favorite' do
+                i.material-icons favorite
+
+
+  = will_paginate users
