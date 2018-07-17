@@ -251,14 +251,14 @@ section.section--gray-light
       ///// THUMB 1
       .col-md-3.col-sm-6.anim-fade-up
         .thumb.thumb--profile
-          = link_to "http://localhost:3000/posts/1", class: 'thumb__image' do
+          = link_to "http://localhost:3000/posts/1", class: 'thumb__image', data: {trigger_transition_page: ""} do
             = image_tag 'avatar.jpg', class: 'img-cover'
-          = link_to "Elisa Lucet", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary'
+          = link_to "Elisa Lucet", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary', data: {trigger_transition_page: ""}
           .thumb__speciality Francais
           .thumb__location
             span
               = image_tag 'icons/placeholder.svg'
-            span 69004 Lyon
+            span 38920 Crolles
           = link_to "http://localhost:3000/posts/1", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
             span En savoir plus
           = link_to "", class: 'thumb__favorite' do
@@ -267,29 +267,27 @@ section.section--gray-light
       ///// THUMB 2
       .col-md-3.col-sm-6.anim-fade-up
         .thumb.thumb--profile
-          = link_to "http://localhost:3000/posts/1", class: 'thumb__image' do
-            = image_tag 'avatar.jpg', class: 'img-cover'
-          = link_to "Elisa Lucet", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary'
-          .thumb__speciality Francais
+          = link_to "http://localhost:3000/posts/1", class: 'thumb__image', data: {trigger_transition_page: ""} do
+            = image_tag 'missing.png', class: 'img-cover'
+          = link_to "Mavis Muller", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary', data: {trigger_transition_page: ""}
+          .thumb__speciality Anglais
           .thumb__location
             span
               = image_tag 'icons/placeholder.svg'
-            span 69004 Lyon
+            span 72 000 Paris
           = link_to "http://localhost:3000/posts/1", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
             span En savoir plus
           = link_to "", class: 'thumb__favorite' do
             i.material-icons favorite
 
 
-
-
       ///// THUMB 3
       .col-md-3.col-sm-6.anim-fade-up
         .thumb.thumb--profile
-          = link_to "http://localhost:3000/posts/1", class: 'thumb__image' do
-            = image_tag 'avatar.jpg', class: 'img-cover'
-          = link_to "Elisa Lucet", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary'
-          .thumb__speciality Francais
+          = link_to "http://localhost:3000/posts/1", class: 'thumb__image', data: {trigger_transition_page: ""} do
+            = image_tag 'missing.png', class: 'img-cover'
+          = link_to "Alessia Buela", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary', data: {trigger_transition_page: ""}
+          .thumb__speciality Anglais
           .thumb__location
             span
               = image_tag 'icons/placeholder.svg'
@@ -304,14 +302,14 @@ section.section--gray-light
       ///// THUMB 4
       .col-md-3.col-sm-6.anim-fade-up
         .thumb.thumb--profile
-          = link_to "http://localhost:3000/posts/1", class: 'thumb__image' do
-            = image_tag 'avatar.jpg', class: 'img-cover'
-          = link_to "Elisa Lucet", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary'
-          .thumb__speciality Francais
+          = link_to "http://localhost:3000/posts/1", class: 'thumb__image', data: {trigger_transition_page: ""} do
+            = image_tag 'missing.png', class: 'img-cover'
+          = link_to "Anna Barton", "http://localhost:3000/posts/1", class: 'thumb__title link-gray-primary', data: {trigger_transition_page: ""}
+          .thumb__speciality Espagnol
           .thumb__location
             span
               = image_tag 'icons/placeholder.svg'
-            span 69004 Lyon
+            span 38000 Grenoble
           = link_to "http://localhost:3000/posts/1", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
             span En savoir plus
           = link_to "", class: 'thumb__favorite' do
@@ -329,7 +327,7 @@ section.section--gray-light
         .thumb__location
           span
             = image_tag 'icons/placeholder.svg'
-          span 69004 Lyon
+          span 38000 Grenoble
         = link_to "http://localhost:3000/posts/1", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
           span En savoir plus
         = link_to "", class: 'thumb__favorite' do
@@ -337,7 +335,7 @@ section.section--gray-light
 
       .thumb.thumb--profile
         = link_to "", class: 'thumb__image' do
-          = image_tag 'avatar.jpg', class: 'img-cover'
+          = image_tag 'missing.png', class: 'img-cover'
         = link_to "Elisa Lucet", "", class: 'thumb__title link-gray-primary'
         .thumb__speciality Francais
         .thumb__location
@@ -351,7 +349,7 @@ section.section--gray-light
 
       .thumb.thumb--profile
         = link_to "", class: 'thumb__image' do
-          = image_tag 'avatar.jpg', class: 'img-cover'
+          = image_tag 'missing.png', class: 'img-cover'
         = link_to "Elisa Lucet", "", class: 'thumb__title link-gray-primary'
         .thumb__speciality Francais
         .thumb__location
@@ -365,7 +363,7 @@ section.section--gray-light
 
       .thumb.thumb--profile
         = link_to "", class: 'thumb__image' do
-          = image_tag 'avatar.jpg', class: 'img-cover'
+          = image_tag 'missing.png', class: 'img-cover'
         = link_to "Elisa Lucet", "", class: 'thumb__title link-gray-primary'
         .thumb__speciality Francais
         .thumb__location
