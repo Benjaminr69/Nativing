@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
 
+  resources :sessions
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  delete '/logout' => 'sessions#destroy'
 
 	resources :users
   get 'signup' => 'users#new'
