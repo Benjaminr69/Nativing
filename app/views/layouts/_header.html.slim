@@ -10,9 +10,20 @@ header.main-header
 
       ul.nav.navbar-nav.main-header__menu.anim-fade#mainHeaderMenu data-is-main-menu="" data-is-nav="" data-is-scroll=""
         //!\\ TODO : Ajouter classe active
-        li.nav-item.nav-item--btn.anim-fade
-          = link_to "#", class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
-            span Devenir coach
+
+        - if logged_in?
+          - if current_user.coach?
+            li.nav-item.nav-item--btn.anim-fade
+              = link_to coach_path, class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+                span Devenir coach
+          - else
+            li.nav-item.nav-item--btn.anim-fade
+              = link_to become_coach_url(fname: @current_user.fname), class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+                span Devenir coach
+        - else
+            li.nav-item.nav-item--btn.anim-fade
+              = link_to login_path, class: "btn btn-primary nav-link", data: {trigger_transition_page: ""} do
+                span Devenir coach
 
         li.nav-item.anim-fade
           = link_to "Annonces", posts_path, class: "nav-link", data: {trigger_transition_page: ""}

@@ -1,0 +1,97 @@
+////////////////////
+// TABS PROFIL
+////////////////////////////////////////////////////////////////////////////////
+.tabs-wrapper.anim--cascad data-is-scroll=""
+
+
+  ul.tabs__nav.anim-fade-up
+    = link_to coach_path, class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span En savoir plus
+
+
+  .tabs__content.anim-fade-up
+
+
+    = form_for @message, url: become_coach_url do |f|
+      = notice
+      = @message.errors.full_messages.join(', ')
+
+      .form-group.form-group--smooth
+        = f.text_field :fname, :value => @fname, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label "Prénom", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.phone_field :phone, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label "Téléphone", class: 'label--smooth'
+
+      .form-group.form-group--smooth
+        = f.email_field :email, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+        = f.label "Email", class: 'label--smooth'
+
+      = f.text_area :body, placeholder: 'Votre demande', rows: '5'
+
+      = f.submit 'Envoyer', class: 'btn btn-primary'
+
+
+
+
+
+////////////////////
+// CARD RASSURANCE
+////////////////////////////////////////////////////////////////////////////////
+section.section--primary#scroll
+  .container.anim--cascad data-is-scroll=""
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2.anim-fade
+      div Nativing pour voyager l'esprit
+      span> léger, en toute
+      span.font--bold sécurité.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
+    .row.anim-fade.anim--cascad data-is-scroll=""
+
+
+      ///// CARD 1
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/trophy-primary.svg'
+            h3 Certification
+          .card__content
+            p
+              span> Voyagez en toute sécurité, grâce à des coachs
+              span.font--bold sélectionnés et certifiés par Nativing.
+
+
+      ///// CARD 2
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/money-primary.svg'
+            h3 Paiement
+          .card__content
+            p
+              span> Le site web de Nativing dispose d’une fonctionnalité de paiement sécurisé
+              span.font--bold pour voyager en toute tranquillité
+
+
+      ///// CARD 3
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/placeholder.svg'
+            h3 Adresse
+          .card__content
+            p
+              span> Pour toute question ou demande, n’hésitez pas à
+              span.font--bold contacter Nativing ou à vous déplacer directement chez nous.
