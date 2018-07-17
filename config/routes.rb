@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'help' => 'static_pages#help'
   get 'mentions' => 'static_pages#mentions'
+  get 'conditions' => 'static_pages#conditions'
   get 'coach' => 'static_pages#coach'
   get 'voyageur' => 'static_pages#voyageur'
   get 'about' => 'static_pages#about'

@@ -51,16 +51,16 @@ footer.main-footer
             li.nav-item
               = link_to 'Accueil', "/", class: "nav-link"
             li.nav-item
-              = link_to 'Devenir coach', "#", class: "nav-link"
+              = link_to 'Devenir coach', coach_path, class: "nav-link"
             li.nav-item
-              = link_to 'Progresser en langue', "#", class: "nav-link"
+              = link_to 'Progresser en langue', voyageur_path, class: "nav-link"
             li.nav-item
               = link_to 'Connexion', login_path, class: "nav-link"
 
         .footer-legals
           ul.navbar-nav
             li.nav-item
-              = link_to 'Conditions générales', "#", class: "nav-link"
+              = link_to 'Conditions générales', conditions_path, class: "nav-link"
             li.nav-item
               = link_to 'Mentions légales', mentions_path, class: "nav-link"
           .footer-time © #{Date.today.year} Nativing
