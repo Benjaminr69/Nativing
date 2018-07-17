@@ -17,6 +17,19 @@
 
         p.anim-fade-up Nativing, c’est partager des moments uniques en immersion totale chez l’habitant, pour développer vos capacités linguistiques.
 
+        .searchbar.searchbar--home.anim-fade-up
+          .form-group.form-group--smooth
+            input.form-control.input-smooth--first.input-smooth type="text" data-is-input-smooth=""
+            label.label--smooth Langue
+          .form-group.form-group--smooth
+            input.form-control.input-smooth type="text" data-is-input-smooth=""
+            label.label--smooth Ville
+          .form-group.form-group--smooth.input-smooth--last
+            input.form-control.input-smooth type="text" data-is-input-smooth=""
+            label.label--smooth Date
+          = link_to users_path, class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+            span Rechercher
+
 
 
 
