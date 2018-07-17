@@ -1,4 +1,4 @@
-<h1><%= @post.user.fname %> <%= @post.user.lname %>, <%= @post.user.age %> ans</h1>
+<br><br><br><h1><%= @post.user.fname %> <%= @post.user.lname %>, <%= @post.user.age %> ans</h1>
 <h2>Coach d'<%= @post.user.mother_tongue %></h2>
 <p><%= @post.user.spoken_languages.map(&:name).sort.join(", ") %></p>
 <p><%= @post.price %>€ / jour</p><br>
