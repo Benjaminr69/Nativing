@@ -29,6 +29,10 @@
         visibility: hidden
     .hero__image
       width: 100%
+    .hero__image--video
+      visibility: visible
+      opacity: 1
+      z-index: 10
     .hero__action--scroll
       opacity: 0
       visibility: hidden
@@ -100,6 +104,23 @@
       top: 0
       width: 100%
       z-index: 5
+
+
+  ///// HERO IMAGE
+  .hero__image--video
+    height: 100%
+    left: 0
+    opacity: 0
+    position: absolute
+    top: 0
+    visibility: hidden
+    transition: all $transition-default
+    width: 100%
+    z-index: 8
+    iframe
+      height: 100%
+      width: 100%
+
 
 
   ///// HERO ACTION
