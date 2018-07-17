@@ -4,10 +4,10 @@ div#filterrific_results
   /   <%= page_entries_info users %>
   / </div> -->
 
-  .row.anim--cascad data-is-scroll=""
+  .row
     - @users.each do |user|
     	- if user.coach?
-          .col-sm-4.anim-fade-up
+          .col-sm-4
             .thumb.thumb--profile
               = link_to "", class: 'thumb__image' do
                 = image_tag "missing.png", class: 'img-cover'

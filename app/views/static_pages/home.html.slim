@@ -46,8 +46,8 @@
   // HERO BTN HALO
   // ---------------------------------------------------------
   .btn.btn--halo#playvideo data-trigger-video=""
-    = image_tag 'icons/play-button.svg'
-
+    = image_tag 'icons/play-button.svg', class: 'first'
+    = image_tag 'icons/cancel-music.svg', class: 'second'
 
 
 
@@ -379,7 +379,7 @@ section.section--gray-light
 
     .row.anim-fade
       .col-lg-12.text-center.m-t-50
-        = link_to posts_path, class: "btn btn-primary nav-link btn-outline", data: {trigger_transition_page: ""} do
+        = link_to users_path, class: "btn btn-primary nav-link btn-outline", data: {trigger_transition_page: ""} do
           span Tous les coachs
 
 

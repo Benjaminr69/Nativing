@@ -186,7 +186,17 @@ a.btn-primary:focus
 
   img
     color: $white
-    margin-left: 0.3rem
-    position: relative
+    margin-left: 0
+    left: 50%
+    position: absolute
+    top: 50%
+    transition: all $transition-default
+    transform: translate(-50%, -50%)
     width: 2rem
     z-index: 23
+  .first
+    opacity: 1
+    visibility: visible
+  .second
+    opacity: 0
+    visibility: visible
