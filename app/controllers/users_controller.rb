@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:index, :destroy]
+  before_action :admin_user,     only: [:destroy]
 
   def first; end
   def second; end
@@ -42,7 +42,25 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @filterrific = initialize_filterrific(
+      User,
+      params[:filterrific]
+      #persistence_id: 'shared_key',
+      #default_filter_params: {},
+      #available_filters: [],
+    ) or return
+    @users = @filterrific.find.page(params[:page])
+
+    # Respond to html for initial page load and to js for AJAX filter updates.
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    rescue ActiveRecord::RecordNotFound => e
+      # There is an issue with the persisted param_set. Reset it.
+      puts "Had to reset filterrific params: #{ e.message }"
+      redirect_to(reset_filterrific_url(format: :html)) and return
   end
 
   def destroy
@@ -88,5 +106,4 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
-
 end

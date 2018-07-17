@@ -1,0 +1,17 @@
+<h1>Advanced Search</h1>
+
+<%= form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :mother_tongue %><br />
+    <%= f.text_field :mother_tongue %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.text_field :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :locality %><br />
+    <%= f.text_field :locality %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

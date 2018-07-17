@@ -3,7 +3,25 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.paginate(page: params[:page])
+    @filterrific = initialize_filterrific(
+      Post,
+      params[:filterrific]
+      #persistence_id: 'shared_key',
+      #default_filter_params: {},
+      #available_filters: [],
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+
+    # Respond to html for initial page load and to js for AJAX filter updates.
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    rescue ActiveRecord::RecordNotFound => e
+      # There is an issue with the persisted param_set. Reset it.
+      puts "Had to reset filterrific params: #{ e.message }"
+      redirect_to(reset_filterrific_url(format: :html)) and return
   end
 
   def show

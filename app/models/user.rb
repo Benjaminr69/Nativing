@@ -1,13 +1,18 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token, :activation_token, :reset_token
+
   has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>" },
+
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_and_belongs_to_many :spoken_languages
+  validates_uniqueness_of :post_id
   # Add a virtual field named `address` and a class method `address_fields` returning `JT::Rails::Address.fields` prefixed by `address_` in this case
   has_address :address
-  has_many :advertisements
+  has_one :post
+  has_many :availabilities
 
+  include Filterable
 
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -20,6 +25,25 @@ class User < ApplicationRecord
 			          uniqueness: { case_sensitive: false }
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  filterrific(
+    default_filter_params: {},
+    available_filters: [
+      :with_mother_tongue,
+      :with_locality,
+      :with_start_time_gte
+    ]
+  )
+
+  scope :with_mother_tongue, -> (search_string) {
+  where("users.mother_tongue LIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
+  }
+
+  scope :with_locality, -> (search_string) {
+    where("users.locality LIKE ?", (search_string.to_s.gsub('*', '%') + '%').gsub(/%+/, '%'))
+  }
+
+  scope :with_start_time_gte, -> (ref_date) { joins(:availabilities).where('availabilities.start_time >= ?', ref_date) }
 
 	# Returns the hash digest of the given string.
   def User.digest(string)
@@ -82,6 +106,14 @@ class User < ApplicationRecord
   # def age
   #   ((Time.zone.now - birthdate.to_i) / 1.year.seconds).floor
   # end
+
+  def self.apply_filters(params)
+    user = self
+    user = user_by_mother_tongue(mother_tongue: params[:mother_tongue]) if params[:mother_tongue].present?
+    user = user_by_locality(locality: params[:locality]) if params[:locality].present?
+    user
+  end
+
 
   private
 

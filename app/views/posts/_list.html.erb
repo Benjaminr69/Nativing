@@ -1,0 +1,20 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info posts %>
+  </div>
+
+  <div>
+    <% @posts.each do |post| %>
+      <h1><%= post.user.fname %> <%= post.user.lname %></h1>
+        <h2><%= post.user.mother_tongue %></h2>
+      <center>
+        <p><%= post.user.postal_code %> <%= post.user.locality %></p>
+
+        <p><%= link_to "En savoir plus", post %></p>
+      </center>
+    <% end %>
+  </div>
+</div>
+
+<%= will_paginate posts %>
