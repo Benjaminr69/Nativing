@@ -24,9 +24,9 @@ class PostsController < ApplicationController
       redirect_to(reset_filterrific_url(format: :html)) and return
   end
 
-  def show
-    @post_attachments = @post.post_attachments.all
-  end
+  # def show
+  #   @post_attachments = @post.post_attachments.all
+  # end
 
   def new
   	@post = Post.new

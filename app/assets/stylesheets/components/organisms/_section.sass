@@ -164,14 +164,31 @@ section
 ///// SECTION USER
 .section--user
   padding-top: 7rem
+  &.section--user--show
+    padding-bottom: 0
+    overflow: visible
+    .container,
+    .hero--sm,
+    .hero__content
+      overflow: visible
+    .hero--sm
+      align-items: flex-end
+      height: 33rem
 
 .section--users
   .thumb--profile
     margin-bottom: 3rem
+
 
 ///// SECTION CARD
 .section--cards
   z-index: 10
   padding: 0 0 1rem
   margin-top: -4rem
+
+
+///// SECTION content
+.section--content
+  background-color: $gray-light
+  padding: 13rem 0 3rem
 
