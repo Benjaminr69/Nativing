@@ -55,13 +55,13 @@ footer.main-footer
             li.nav-item
               = link_to 'Progresser en langue', "#", class: "nav-link"
             li.nav-item
-              = link_to 'Connexion', "#", class: "nav-link"
+              = link_to 'Connexion', login_path, class: "nav-link"
 
         .footer-legals
           ul.navbar-nav
             li.nav-item
               = link_to 'Conditions générales', "#", class: "nav-link"
             li.nav-item
-              = link_to 'Mentions légales', "#", class: "nav-link"
+              = link_to 'Mentions légales', mentions_path, class: "nav-link"
           .footer-time © #{Date.today.year} Nativing
 
