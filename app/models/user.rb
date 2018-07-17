@@ -103,9 +103,9 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  # def age
-  #   ((Time.zone.now - birthdate.to_i) / 1.year.seconds).floor
-  # end
+  def age
+    ((Time.zone.now - birthdate.to_i) / 1.year.seconds rescue 25).floor
+  end
 
   def self.apply_filters(params)
     user = self
