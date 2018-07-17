@@ -15,18 +15,18 @@
 #= require turbolinks
 #= require_tree .
 #= require jt_address
+#= require filterrific/filterrific-jquery
+#= require jquery-ui/widgets/datepicker
 
+#= require bootstrap-datepicker
+#= require bootstrap-datepicker/core
+#= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
+#= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 
-# // This function is call when Google Maps is loaded
-# // window.googleMapInitialize = function(){
-
-# //     // Simple usage
-# //     $('.jt-address-autocomplete').jt_address();
-
-# // };
 
 
 $ ->
+
 
   new HeaderActive()
 
