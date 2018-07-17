@@ -8,6 +8,5 @@ user_<%= n %>:
   email: <%= "user-#{n}@nativing.com" %>
   password_digest: <%= User.digest('password') %>
   activated: true
-  coach: true
   activated_at: <%= Time.zone.now %>
 <% end %>
