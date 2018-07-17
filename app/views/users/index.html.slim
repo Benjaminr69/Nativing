@@ -1,0 +1,50 @@
+section.section--user
+
+  ////////////////////
+  // HERO SMALL
+  ////////////////////////////////////////////////////////////////////////////////
+  .hero.hero--sm
+
+
+
+    // HERO IMAGE
+    // ---------------------------------------------------------
+    .hero__image data-is-scroll=""
+      = image_tag "home/slider-3.jpg", class: 'img-cover'
+
+
+    // HERO CONTENT
+    // ---------------------------------------------------------
+    .hero__content data-is-scroll=""
+      .container
+        .hero__title.anim--cascad data-is-scroll=""
+          h1.anim-fade-up Partez ou vous voulez, quand vous voulez.
+
+          p.anim-fade-up Nos hôtes Nativing vous accueillent chez eux, partout en France.
+
+          = form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit', class: 'searchbar'} do |f|
+
+            .form-group.form-group--smooth
+              = f.text_field :with_mother_tongue, class: 'mother_tongue filterrific-periodically-observed form-control input-smooth--first input-smooth', data: { is_input_smooth: ''}
+              = f.label "Langue", class: 'label--smooth'
+
+            .form-group.form-group--smooth
+              = f.text_field :with_locality, class: 'locality filterrific-periodically-observed form-control input-smooth', data: { is_input_smooth: ''}
+              = f.label "Ville", class: 'label--smooth'
+
+            .form-group.form-group--smooth
+              = f.text_field :with_start_time_gte, 'data-provide' => 'datepicker', class: 'form-control input-smooth', data: { is_input_smooth: ''}
+              = f.label "Date", class: 'label--smooth'
+
+            = f.submit 'Rechercher', class: 'btn btn-primary'
+
+  div
+    = link_to 'Reset filters', reset_filterrific_url
+
+    = render_filterrific_spinner
+
+    = render partial: 'users/list', locals: { users: @users }
+
+
+javascript:
+  $('[data-behaviour~=datepicker]').datepicker();

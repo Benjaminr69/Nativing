@@ -60,8 +60,8 @@ footer.main-footer
         .footer-legals
           ul.navbar-nav
             li.nav-item
-              = link_to 'Conditions générales', conditions_path, class: "nav-link"
+              = link_to 'Conditions générales', conditions_path, class: "nav-link", data: {trigger_transition_page: ""}
             li.nav-item
-              = link_to 'Mentions légales', mentions_path, class: "nav-link"
+              = link_to 'Mentions légales', mentions_path, class: "nav-link", data: {trigger_transition_page: ""}
           .footer-time © #{Date.today.year} Nativing
 
