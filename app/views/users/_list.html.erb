@@ -11,11 +11,8 @@
     	<center>
       		<p><%= user.postal_code %> <%= user.locality %></p>
 
-      		<p><%= link_to "En savoir plus" user.post %></p>
+      		<p><a href="http://localhost:3000/posts/13">En savoir plus</a></p>
     	</center>
-      <% if @current_user.admin? %>
-        <%= link_to "Supprimer" delete_path %>
-      <% end %>
   <% end %>
 <% end %>
 </div>
