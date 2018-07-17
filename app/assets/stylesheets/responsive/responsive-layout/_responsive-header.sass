@@ -5,6 +5,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 @media (max-width: 778px)
 
+  .page-home,
+  .page-session
+
+    .main-header
+      &.main-header--mobile
+        .toggler-icon
+          div
+            background-color: $white
+
   header.main-header
 
     display: none
@@ -58,7 +67,7 @@
 
         div
           border-radius: 0.3rem
-          background-color: $white
+          background-color: $gray-dark
           height: 0.3rem
           left: 0%
           position: absolute
