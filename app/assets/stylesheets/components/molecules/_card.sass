@@ -14,6 +14,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 .card--dot
 
+  &.card--dot--center
+    .card__title
+      justify-content: center
+    .card__content
+      text-align: center
 
   .card__title
     align-items: center
@@ -280,8 +285,14 @@
     .slider--nav
       margin-right: -1rem
       margin-left: -1rem
+      .item
+        &::after
+          content: none
     .slider--lg
       height: 30rem
+      .item
+        &::after
+          content: none
 
 
 

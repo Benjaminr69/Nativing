@@ -9,9 +9,9 @@ div#filterrific_results
     	- if user.coach?
           .col-sm-4
             .thumb.thumb--profile
-              = link_to "", class: 'thumb__image' do
+              = link_to "", class: 'thumb__image', data: {trigger_transition_page: ""} do
                 = image_tag "missing.png", class: 'img-cover'
-              = link_to "", class: 'thumb__title link-gray-primary' do
+              = link_to "", class: 'thumb__title link-gray-primary', data: {trigger_transition_page: ""} do
                 span> = user.fname
                 span> = user.lname
               .thumb__speciality = user.mother_tongue

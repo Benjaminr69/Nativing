@@ -22,3 +22,317 @@ section.section--user
 
           p.anim-fade-up Avec Nativing, devenez coach en langue et accueillez des personnes du monde entier.
 
+          .text-center
+            = link_to "", class: 'btn btn-primary' do
+              span Renseignez vous
+
+
+
+
+
+  ////////////////////
+  // RASSURANCE
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--cards.section--cards--gray
+    .container
+      .row.anim--cascad data-is-scroll=""
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/home.svg'
+              h4 Hébergez
+            .card__content
+              span> Accueillez un apprenant qui souhaite progresser dans votre langue,
+              span.font--bold sur une période de 3 à 90 jours
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/worlwide.svg'
+              h4 Coachez
+            .card__content
+              span> Proposez lui une expérience unique,
+              span.font--bold en immersion totale dans  votre pays.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/money-primary.svg'
+              h4 Appréciez
+            .card__content
+              span> Obtenez une rémunération selon
+              span.font--bold le type de prestation proposée.
+
+
+
+
+
+  ////////////////////
+  // THUMB PROFIL
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--gray-light.section--gray-light--white--lol
+    .container
+      .row.anim--cascad data-is-scroll=""
+
+
+
+        // TITLE
+        // ---------------------------------------------------------
+        .col-md-2.position--relative.anim-fade
+          h2.title--absolute
+            div Devenez coach en langue,
+            div accueillez des personnes
+            div.font--bold du monde entier.
+
+
+
+        // SLIDER
+        // ---------------------------------------------------------
+        .col-md-10.anim-fade-up
+
+
+          ///// SLIDER LG
+          .slider.slider--lg.anim-fade-up#sliderHome data-is-slider='{"arrows": false, "dots": false, "fade": true, "asNavFor": "#sliderHomeNav"}'
+            .item
+              = image_tag 'home/slider-1.jpg', class: 'img-cover'
+              = link_to "", class: 'slide__title' do
+                span Paris
+                span
+                  = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
+            .item
+              = image_tag 'home/slider-2.jpg', class: 'img-cover'
+              = link_to "", class: 'slide__title' do
+                span Bordeaux
+                span
+                  = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
+            .item
+              = image_tag 'home/slider-3.jpg', class: 'img-cover'
+              = link_to "", class: 'slide__title' do
+                span Lyon
+                span
+                  = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
+            .item
+              = image_tag 'home/slider-1.jpg', class: 'img-cover'
+              = link_to "", class: 'slide__title' do
+                span Paris
+                span
+                  = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
+            .item
+              = image_tag 'home/slider-4.jpg', class: 'img-cover'
+              = link_to "", class: 'slide__title' do
+                span Marseille
+                span
+                  = image_tag 'icons/left-arrow.svg', class: 'img-fluid'
+
+
+          ///// SLIDER NAV
+          .slider.slider--nav.anim-fade-up#sliderHomeNav data-is-slider='{"arrows": false, "slidesToShow": 3, "slidesToScroll": 1, "asNavFor": "#sliderHome", "dots": true, "centerMode": true, "focusOnSelect": true, "responsive": [ {"breakpoint": 778, "settings": { "slidesToShow": 1 }}]}'
+            .item
+              = image_tag 'home/slider-1.jpg', class: 'img-cover'
+              .slide__title Paris
+            .item
+              = image_tag 'home/slider-2.jpg', class: 'img-cover'
+              .slide__title Bordeaux
+            .item
+              = image_tag 'home/slider-3.jpg', class: 'img-cover'
+              .slide__title Lyon
+            .item
+              = image_tag 'home/slider-1.jpg', class: 'img-cover'
+              .slide__title Paris
+            .item
+              = image_tag 'home/slider-4.jpg', class: 'img-cover'
+              .slide__title Marseille
+
+
+
+
+
+  ////////////////////
+  // CARD
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--primary#scroll
+    .container.anim--cascad data-is-scroll=""
+
+
+
+      // TITLE
+      // ---------------------------------------------------------
+      h2.anim-fade
+        span> Devenir hôte linguistique
+        span.font--bold natif
+
+
+
+      // CARD
+      // ---------------------------------------------------------
+      .row.anim-fade.anim--cascad data-is-scroll=""
+
+
+        ///// CARD 1
+        .col-sm-3.anim-fade-up
+          .card.card--dot.card--dot--center
+            .card__title
+              .card__dot
+                p 1
+            .card__content
+              p
+                span.font--bold> Complétez votre profil
+
+
+        ///// CARD 2
+        .col-sm-3.anim-fade-up
+          .card.card--dot.card--dot--center
+            .card__title
+              .card__dot
+                p 2
+            .card__content
+              p
+                span.font--bold> Définissez votre tarif
+
+
+        ///// CARD 3
+        .col-sm-3.anim-fade-up
+          .card.card--dot.card--dot--center
+            .card__title
+              .card__dot.text-center
+                p 3
+            .card__content
+              p
+                span.font--bold> Passez un entretien
+
+        ///// CARD 4
+        .col-sm-3.anim-fade-up
+          .card.card--dot.card--dot--center
+            .card__title
+              .card__dot
+                p 4
+            .card__content
+              p
+                span.font--bold> Accueillez un voyageur
+
+
+
+
+
+  ////////////////////
+  // RASSURANCE
+  ////////////////////////////////////////////////////////////////////////////////
+  section.section--cards--display.anim--cascad data-is-scroll=""
+    .container
+
+      h2.anim-fade
+        div Les avantages de l'hôte
+        div.font--bold linguistique natif
+
+      .row.anim--cascad data-is-scroll=""
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/money-primary.svg'
+              h4 Revenus
+            .card__content
+              span> En accueillant des voyageurs chez vous, gagnez un revenu
+              span.font--bold selon le type de prestation proposé.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/home.svg'
+              h4 Rencontres
+            .card__content
+              span> Rencontrez des personnes des quatres coins du monde,
+              span.font--bold et vivez une expérience unique.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/objective.svg'
+              h4 Activités
+            .card__content
+              span> Développez des activités ludiques pour vos invités,
+              span.font--bold loin des cours de langue traditionnels.
+
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/note.svg'
+              h4 Planning
+            .card__content
+              span> Aménagez votre propose emploi du temps, selon le temps que vous pourrez
+              span.font--bold consacrer à votre activité.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/trophy-primary.svg'
+              h4 Efficacité
+            .card__content
+              span> Faîte progresser vos invités en utilisant la méthode Nativing,
+              span.font--bold développée par des professeurs.
+        .col-sm-4.anim-fade-up
+          .card.card--rassurance
+            .card__title
+              = image_tag 'icons/worlwide.svg'
+              h4 Assistance
+            .card__content
+              span> N'hésitez pas  à nous contacter en cas de besoin,
+              span.font--bold qui reste à votre entière disposition.
+
+
+
+
+
+////////////////////
+// CARD RASSURANCE
+////////////////////////////////////////////////////////////////////////////////
+section.section--primary#scroll
+  .container.anim--cascad data-is-scroll=""
+
+
+
+    // TITLE
+    // ---------------------------------------------------------
+    h2.anim-fade
+      div Nativing pour voyager l'esprit
+      span> léger, en toute
+      span.font--bold sécurité.
+
+
+
+    // CARD
+    // ---------------------------------------------------------
+    .row.anim-fade.anim--cascad data-is-scroll=""
+
+
+      ///// CARD 1
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/trophy-primary.svg'
+            h3 Certification
+          .card__content
+            p
+              span> Voyagez en toute sécurité, grâce à des coachs
+              span.font--bold sélectionnés et certifiés par Nativing.
+
+
+      ///// CARD 2
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/money-primary.svg'
+            h3 Paiement
+          .card__content
+            p
+              span> Le site web de Nativing dispose d’une fonctionnalité de paiement sécurisé
+              span.font--bold pour voyager en toute tranquillité
+
+
+      ///// CARD 3
+      .col-sm-4.anim-fade-up
+        .card.card--dot
+          .card__title
+            .card__dot
+              = image_tag 'icons/placeholder.svg'
+            h3 Adresse
+          .card__content
+            p
+              span> Pour toute question ou demande, n’hésitez pas à
+              span.font--bold contacter Nativing ou à vous déplacer directement chez nous.
