@@ -1,0 +1,19 @@
+= form_for @post do |f|
+
+  = render 'shared/post_error'
+
+  = f.hidden_field :user_id, :value =>current_user.id
+
+  .form-group.form-group--smooth
+    = f.number_field :price, class: 'form-control input-smooth', data: { is_input_smooth: ''}
+    = f.label :price, "Tarif par jour :", class: 'label--smooth'
+
+  .form-group.form-group--smooth
+    = f.text_area :content, size: "60x12", placeholder: "Parlez un peu de vous", class: 'form-control'
+    / = f.label :content "Description :"
+
+  = f.fields_for :post_attachments do |p|
+    = p.label :avatar, "Photo de votre logement :"
+    = p.file_field :avatar, :multiple => true, name:     "post_attachments[avatar][]"
+
+  = f.submit "Publiez l'annonce", class: 'btn btn-primary'

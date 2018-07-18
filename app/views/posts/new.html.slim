@@ -1,0 +1,13 @@
+////////////////////
+// TABS PARAMETRE
+////////////////////////////////////////////////////////////////////////////////
+.tabs-wrapper.anim--cascad data-is-scroll=""
+
+  .tabs__nav.anim-fade-up
+    = link_to "/", class: 'btn btn-primary', data: {trigger_transition_page: ""} do
+      span Paramètres voyageur
+
+  .tabs__content.anim-fade-up
+    h1 Créer une annonce
+
+    = render 'form'

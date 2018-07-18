@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-    @post_attachment = @post.post_attachments.build
+    # @post_attachment = @post.post_attachments.build
   end
 
   def create
